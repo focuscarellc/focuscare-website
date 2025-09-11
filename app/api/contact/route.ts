@@ -1,6 +1,8 @@
 import { createClient } from '@/utils/supabase/server'
 import { cookies } from 'next/headers'
 import { NextResponse } from 'next/server'
+export const runtime = 'edge';
+
 
 export async function POST(request: Request) {
   let formData;
