@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 195 54% 94%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 231 50% 21%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 174 61% 53%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 195 54% 90%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 195 54% 90%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 174 61% 53%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 231 50% 10%;
+    --foreground: 210 40% 98%;
+    --card: 231 50% 15%;
+    --card-foreground: 210 40% 98%;
+    --popover: 231 50% 15%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 174 61% 53%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 231 50% 21%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 231 50% 15%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 231 50% 15%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 174 61% 53%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Accessibility Styles */
+.skip-link {
+  @apply sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md;
+}
+
+:focus-visible {
+  @apply outline-2 outline-offset-2 outline-primary;
+}
+
+.high-contrast-text {
+  @apply text-foreground font-medium;
+}
+
+.hero-pattern {
+  background-color: #e4f2f7;
+  background-image: radial-gradient(#d0e6ee 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.dark .hero-pattern {
+  background-color: #19204e;
+  background-image: radial-gradient(#232a5e 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.image-shadow {
+  box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease;
+}
+
+.image-shadow:hover {
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-secondary to-primary;
+}
+
+.btn-primary {
+  @apply bg-primary text-white px-6 py-3 rounded-full font-medium transition-all hover:shadow-lg hover:translate-y-[-2px];
+}
+
+.btn-secondary {
+  @apply bg-white text-secondary border border-secondary px-6 py-3 rounded-full font-medium transition-all hover:shadow-lg hover:translate-y-[-2px];
+}
+
+.nav-link {
+  @apply text-secondary hover:text-primary transition-colors font-medium;
+}
+
+.section-padding {
+  @apply py-16 md:py-24 lg:py-32;
+}
+
+.container-custom {
+  @apply container mx-auto px-4 md:px-8 max-w-7xl;
+}
+
+.feature-card {
+  @apply bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow;
+}
+
+.circle-diagram {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: rgba(var(--secondary), 0.9);
+}
+
+.circle-icon {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.circle-icon-1 {
+  top: 10%;
+  right: 20%;
+}
+
+.circle-icon-2 {
+  top: 30%;
+  right: 0;
+}
+
+.circle-icon-3 {
+  bottom: 30%;
+  right: 0;
+}
+
+.circle-icon-4 {
+  bottom: 10%;
+  left: 40%;
+}
+
+.circle-icon-5 {
+  top: 40%;
+  left: 0;
+}
+
+.circle-line {
+  position: absolute;
+  background-color: #ff5a5a;
+  height: 2px;
+  transform-origin: 0 0;
+}
+
