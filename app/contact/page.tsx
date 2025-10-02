@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowRight, Mail, Phone, MapPin } from "lucide-react"
+import { ArrowRight, Mail, Phone, MapPin, PhoneCall } from "lucide-react"
 import { Button } from "@/components/ui/button"
 // import ContactForm from "./contact-form"
 // import { FilloutStandardEmbed } from "@fillout/react";
@@ -110,8 +110,9 @@ export default function ContactPage() {
                   Interested in learning more about our services? Schedule a free 30-minute consultation with one of our
                   experts.
                 </p>
-                
+                <button className="bg-primary rounded-lg p-2.5 font-semibold text-white w-full">
                 <FilloutConsultation />
+                </button>
                 
               </div>
             </div>
@@ -177,9 +178,10 @@ export default function ContactPage() {
               </p>
             </div>
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
-            <button className="bg-primary rounded-lg p-2.5 font-semibold text-white w-full"></button>
-              <FilloutConsultation/>
-              <button/>
+            <Button variant="secondary" className="w-full min-[400px]:w-auto">
+                  <FilloutConsultation/>
+                    <PhoneCall className="ml-2 h-4 w-4" />
+                  </Button>
             
             </div>
           </div>

@@ -9,8 +9,8 @@ function App() {
 
   return (
     <>
-      <button className="bg-primary rounded-lg p-2.5 font-semibold text-white w-full" 
-      onClick={() => setIsOpen(true)}>Schedule a Call</button>
+      <button  className="" 
+      onClick={() => setIsOpen(true)}>Book a Free Consultation</button>
 
       <FilloutPopupEmbed
         filloutId="hGDrK5qnB8us"

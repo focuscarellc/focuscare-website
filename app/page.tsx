@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowRight, Calendar, Settings, Headset, ShieldCheck, BarChart3, Shield, Users, Server, DollarSignIcon, BadgeDollarSignIcon, AwardIcon } from "lucide-react"
+import { ArrowRight, Calendar, Settings, Headset, ShieldCheck, BarChart3, Shield, Users, Server, BadgeDollarSignIcon, AwardIcon, PhoneCall } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -28,7 +28,7 @@ export default function Home() {
                 
                   <Button className="w-full min-[400px]:w-auto">
                   <FilloutConsultation/>
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                    <PhoneCall className="ml-2 h-4 w-4" />
                   </Button>
                 
                 <Link href="/services">
@@ -250,12 +250,10 @@ export default function Home() {
                 care delivery.
               </p>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                <Link href="/contact">
-                  <Button variant="secondary" className="w-full min-[400px]:w-auto">
-                    Contact Us Today
-                    <ArrowRight className="ml-2 h-4 w-4" />
+              <Button variant="secondary" className="w-full min-[400px]:w-auto">
+                  <FilloutConsultation/>
+                    <PhoneCall className="ml-2 h-4 w-4" />
                   </Button>
-                </Link>
               </div>
             </div>
             <div className="space-y-4">
