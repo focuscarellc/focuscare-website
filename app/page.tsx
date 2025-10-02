@@ -1,10 +1,11 @@
 import Link from "next/link"
-import { ArrowRight, Calendar, Settings, Headset, ShieldCheck, BarChart3, Shield, Users, Server } from "lucide-react"
+import { ArrowRight, Calendar, Settings, Headset, ShieldCheck, BarChart3, Shield, Users, Server, DollarSignIcon, BadgeDollarSignIcon, AwardIcon } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import TestimonialCard from "@/components/testimonial-card"
 import ImageWithShadow from "@/components/image-with-shadow"
+import FilloutConsultation from "./contact/fillout-consultation"
 
 export default function Home() {
   return (
@@ -18,19 +19,18 @@ export default function Home() {
                 Specialized IT Solutions
               </div>
               <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl text-primary dark:text-white">
-                IT Solutions for Disability & Mental Health Providers
+              Simplifying systems so you can focus on the care that matters most.
               </h1>
               <p className="max-w-[600px] text-gray-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-300">
-                FOCUS Care provides tailored IT consultancy and managed services for organizations supporting
-                individuals with intellectual disabilities, autism, and mental health needs.
+              Focus Care helps healthcare and human service providers streamline compliance, technology, and workflows — saving time, money, and ensuring quality care.
               </p>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                <Link href="/contact">
+                
                   <Button className="w-full min-[400px]:w-auto">
-                    Get Started
+                  <FilloutConsultation/>
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
-                </Link>
+                
                 <Link href="/services">
                   <Button variant="secondary" className="w-full min-[400px]:w-auto">
                     Explore Our Services
@@ -61,7 +61,7 @@ export default function Home() {
                 Our Services
               </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-primary dark:text-white">
-                Specialized IT Solutions
+                Services Tailored to Your Needs
               </h2>
               <p className="max-w-[900px] text-gray-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-300">
                 We understand the unique challenges faced by providers in the disability and mental health sectors.
@@ -74,13 +74,14 @@ export default function Home() {
                 <CardHeader className="pb-2">
                   <CardTitle className="flex items-center">
                     <BarChart3 className="mr-2 h-5 w-5 text-secondary" />
-                    IT Consultancy
+                    <a href="/services/digital-transformation" className="hover:underline">
+                      Digital Transformation
+                    </a>
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription>
-                    Strategic IT planning and implementation tailored to the specific needs of disability and mental
-                    health service providers.
+                  We help you modernize your systems, streamline workflows, and improve efficiency — so you can focus on what matters most.
                   </CardDescription>
                 </CardContent>
               </Card>
@@ -88,13 +89,14 @@ export default function Home() {
                 <CardHeader className="pb-2">
                   <CardTitle className="flex items-center">
                     <Server className="mr-2 h-5 w-5 text-secondary" />
-                    Managed IT Services
+                    <a href="/services/managed-it-services" className="hover:underline">
+                      Accounting & HR Management 
+                    </a>
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription>
-                    Comprehensive IT management, monitoring, and support to ensure your systems run smoothly and
-                    securely.
+                    With custom solutions tailored to your unique needs, we help you streamline your accounting and HR processes.
                   </CardDescription>
                 </CardContent>
               </Card>
@@ -109,8 +111,7 @@ export default function Home() {
                 </CardHeader>
                 <CardContent>
                   <CardDescription>
-                    Ensuring your IT infrastructure meets all regulatory requirements while protecting sensitive client
-                    data.
+                  ODP & HIPAA-aligned compliance support, risk assessments, incident management, and audit-ready documentation workflows.
                   </CardDescription>
                 </CardContent>
               </Card>
@@ -146,10 +147,10 @@ export default function Home() {
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-primary dark:text-white">
-                Why Choose FOCUS Care
+                Why Choose Focus Care?  
               </h2>
               <p className="max-w-[900px] text-gray-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-300">
-                We bring specialized expertise to support organizations that make a difference.
+                Rest assured, we've got you covered.
               </p>
             </div>
           </div>
@@ -157,41 +158,39 @@ export default function Home() {
             <Card className="bg-white dark:bg-slate-800">
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <Users className="mr-2 h-6 w-6 text-secondary mt-0.5" />
+                  <Users className="mr-4 h-8 w-8 text-secondary mt-0.5" />
                   Specialized Knowledge
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-700 dark:text-gray-300">
-                  Deep understanding of the unique IT challenges faced by disability and mental health service
-                  providers.
+                  With regulatory stipulations changing frequently, we stay ahead of the curve to keep you compliant and secure.
                 </p>
               </CardContent>
             </Card>
             <Card className="bg-white dark:bg-slate-800">
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <ShieldCheck className="mr-2 h-6 w-6 text-secondary mt-0.5" />
-                  Compliance Expertise
+                  <BadgeDollarSignIcon className="mr-4 h-8 w-8 text-secondary mt-0.5" />
+                  Saving You Time and Money
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-700 dark:text-gray-300">
-                  Ensuring your systems meet all regulatory requirements while maintaining the highest security
-                  standards.
+                  Our custom payroll and billing solutions are focused on ensuring you receive every penny you deserve.
                 </p>
               </CardContent>
             </Card>
             <Card className="bg-white dark:bg-slate-800">
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <Headset className="mr-2 h-6 w-6 text-secondary mt-0.5" />
-                  Dedicated Support
+                  <AwardIcon className="mr-4 h-8 w-8 text-secondary mt-0.5" />
+                  Deep Industry Experience
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-700 dark:text-gray-300">
-                  Responsive, understanding support team that appreciates the critical nature of your services.
+                  We understand the nature of this field, with over 15 years of expertise in the industry.
                 </p>
               </CardContent>
             </Card>
@@ -217,9 +216,9 @@ export default function Home() {
           </div>
           <div className="mx-auto grid max-w-5xl gap-6 py-12 lg:grid-cols-2">
             <TestimonialCard
-              quote="FOCUS Care transformed our IT systems, allowing our staff to focus more on client care and less on technology issues."
-              author="Disability Service Provider"
-              role=""
+              quote="I always receive more than expected with Focus Care. I will absolutely recommend them to anyone looking for a professional experience."
+              author="Al Iqama LLC"
+              role="Founder & CEO"
             />
             <TestimonialCard
               quote="Their understanding of the unique challenges we face as mental health providers made all the difference. Highly recommended."
