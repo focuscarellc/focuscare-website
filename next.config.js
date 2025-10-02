@@ -14,7 +14,16 @@ const nextConfig = {
     webpackBuildWorker: true,
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
-  }
+  },
+  async redirects() {
+    return [
+      {
+        source: '/get-started',
+        destination: '/contact',
+        permanent: true, // 301 redirect
+      },
+    ]
+  },
 }
 
 // Try to import user config (use require instead of import for CommonJS)
