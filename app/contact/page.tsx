@@ -1,5 +1,4 @@
 import Link from "next/link"
-<<<<<<< HEAD
 import { ArrowRight, Mail, Phone, MapPin, PhoneCall } from "lucide-react"
 import { Button } from "@/components/ui/button"
 // import ContactForm from "./contact-form"
@@ -8,17 +7,9 @@ import FilloutForm from "./fillout-form";
 import FilloutConsultation from "./fillout-consultation";
 
 export const metadata = {
-  title: "Contact Us - FOCUS Care",
-  description: "Get in touch with FOCUS Care to discuss your organization's needs and how we can help.",
-=======
-import { ArrowRight, Mail, Phone, MapPin } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import ContactForm from "./contact-form"
-
-export const metadata = {
-  title: "Contact FOCUS Care - IT Solutions for ODP 6400 Providers in Philadelphia & PA",
-  description: "Contact FOCUS Care for specialized IT solutions for ODP 6400 providers, disability support, and mental health organizations in Philadelphia, Johnstown, and across Pennsylvania. Get expert IT consultancy and managed services.",
->>>>>>> 22930cc (feat: website content updates and service restructuring (manual commit by yuey))
+  title: "Contact Us - FOCUS Care - Specialized IT Solutions for ODP 6400 Providers in Philadelphia & PA",
+  description:
+    "Get in touch with FOCUS Care to discuss your organization's needs and how we can help. We provide specialized IT solutions for ODP 6400 providers, disability support, and mental health organizations in Philadelphia, Johnstown, and across Pennsylvania. Get expert IT consultancy and managed services.",
 }
 
 export default function ContactPage() {
@@ -36,11 +27,7 @@ export default function ContactPage() {
                 Contact Us
               </h1>
               <p className="max-w-[900px] text-gray-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-300">
-<<<<<<< HEAD
                 We're here to help. Reach out to discuss how FOCUS Care can support your organization's IT needs.
-=======
-                We're here to help ODP 6400 providers and other disability & mental health organizations in Philadelphia, Johnstown, and across Pennsylvania. Reach out to discuss how FOCUS Care can support your unique IT needs.
->>>>>>> 22930cc (feat: website content updates and service restructuring (manual commit by yuey))
               </p>
             </div>
           </div>
@@ -48,19 +35,11 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form and Info */}
-<<<<<<< HEAD
       <section className="w-full py-12 md:py-24 lg:py-32 ">
         <div className="container px-4 md:px-6 ">
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 ">
             {/* Contact Form - client component wrapper */}
             <FilloutForm />
-=======
-      <section className="w-full py-12 md:py-24 lg:py-32">
-        <div className="container px-4 md:px-6">
-          <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
-            {/* Contact Form - now using client component */}
-            <ContactForm />
->>>>>>> 22930cc (feat: website content updates and service restructuring (manual commit by yuey))
 
             {/* Contact Information */}
             <div className="space-y-6">
@@ -94,19 +73,11 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-medium text-primary dark:text-white">Address</h3>
                       <p className="text-gray-700 dark:text-gray-300">
-<<<<<<< HEAD
                       239 4th Ave Suite 1401 
                         <br />
                         Unit #7549
                         <br />
                         Pittsburgh, PA 15222
-=======
-                        622 Central Ave
-                        <br />
-                        Unit #A300
-                        <br />
-                        Johnstown, PA 15902
->>>>>>> 22930cc (feat: website content updates and service restructuring (manual commit by yuey))
                       </p>
                     </div>
                   </div>
@@ -118,7 +89,6 @@ export default function ContactPage() {
                 <div className="space-y-3">
                   <div className="flex justify-between border-b pb-3">
                     <span className="font-medium text-primary dark:text-white">Monday - Friday</span>
-<<<<<<< HEAD
                     <span className="text-gray-700 dark:text-gray-300">6:00 AM - 6:00 PM</span>
                   </div>
                   <div className="flex justify-between border-b pb-3">
@@ -128,17 +98,6 @@ export default function ContactPage() {
                   <div className="flex justify-between">
                     <span className="font-medium text-primary dark:text-white">Sunday</span>
                     <span className="text-gray-700 dark:text-gray-300">6:00 AM - 2:00 PM</span>
-=======
-                    <span className="text-gray-700 dark:text-gray-300">9:00 AM - 5:00 PM</span>
-                  </div>
-                  <div className="flex justify-between border-b pb-3">
-                    <span className="font-medium text-primary dark:text-white">Saturday</span>
-                    <span className="text-gray-700 dark:text-gray-300">Closed</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="font-medium text-primary dark:text-white">Sunday</span>
-                    <span className="text-gray-700 dark:text-gray-300">Closed</span>
->>>>>>> 22930cc (feat: website content updates and service restructuring (manual commit by yuey))
                   </div>
                 </div>
                 <div className="mt-6 text-sm text-gray-500 dark:text-gray-400">
@@ -152,17 +111,10 @@ export default function ContactPage() {
                   Interested in learning more about our services? Schedule a free 30-minute consultation with one of our
                   experts.
                 </p>
-<<<<<<< HEAD
                 <button className="bg-primary rounded-lg p-2.5 font-semibold text-white w-full">
                 <FilloutConsultation />
                 </button>
                 
-=======
-                <Button className="w-full">
-                  Book a Consultation
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
->>>>>>> 22930cc (feat: website content updates and service restructuring (manual commit by yuey))
               </div>
             </div>
           </div>
@@ -227,20 +179,11 @@ export default function ContactPage() {
               </p>
             </div>
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
-<<<<<<< HEAD
             <Button variant="secondary" className="w-full min-[400px]:w-auto">
                   <FilloutConsultation/>
                     <PhoneCall className="ml-2 h-4 w-4" />
                   </Button>
             
-=======
-              <Link href="/contact">
-                <Button variant="secondary" className="w-full min-[400px]:w-auto">
-                  Schedule a Consultation
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
->>>>>>> 22930cc (feat: website content updates and service restructuring (manual commit by yuey))
             </div>
           </div>
         </div>
@@ -248,4 +191,3 @@ export default function ContactPage() {
     </div>
   )
 }
-

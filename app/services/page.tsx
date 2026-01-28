@@ -31,11 +31,12 @@ export default function ServicesPage() {
             </div>
             <div className="mx-auto lg:ml-auto">
               <ImageWithShadow
-                src="/placeholder.svg?height=550&width=550"
-                alt="IT professionals working with healthcare providers"
+                src="/images/services/care-provider-hero.jpg"
+                alt="Graphic illustration of a calm female care provider, emphasizing compliance, efficiency, and focus on compassionate care."
                 width={550}
                 height={550}
                 className="rounded-lg object-cover"
+                priority
               />
             </div>
           </div>
@@ -214,11 +215,12 @@ export default function ServicesPage() {
             </div>
             <div className="mx-auto order-first lg:order-last">
               <ImageWithShadow
-                src="/placeholder.svg?height=400&width=600"
-                alt="Staff training session"
+                src="/images/services/services-hero-image-remix.jpg"
+                alt="Diverse team of care professionals and tech experts collaboratively reviewing client data for efficiency and compliance."
                 width={600}
                 height={400}
                 className="rounded-lg object-cover"
+                priority
               />
             </div>
           </div>
