@@ -1,13 +1,13 @@
 import Link from "next/link"
-import { ArrowRight, CheckCircle } from "lucide-react"
+import { ArrowRight, CheckCircle, Heart, Star, Lightbulb, Shield, Users, Accessibility } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import ImageWithShadow from "@/components/image-with-shadow"
 
 export const metadata = {
-  title: "About Us - FOCUS Care",
+  title: "About Us - Focus Care",
   description:
-    "Learn about FOCUS Care's mission, values, and team expertise in providing IT solutions for disability and mental health service providers.",
+    "Learn about Focus Care's mission, values, and team expertise in providing IT solutions for disability and mental health service providers.",
 }
 
 export default function AboutPage() {
@@ -22,7 +22,7 @@ export default function AboutPage() {
                 Our Story
               </div>
               <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-primary dark:text-white">
-                About FOCUS Care
+                About Focus Care
               </h1>
               <p className="max-w-[600px] text-gray-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-300">
                 We're dedicated to empowering disability and mental health service providers with technology solutions
@@ -31,8 +31,8 @@ export default function AboutPage() {
             </div>
             <div className="mx-auto lg:ml-auto">
               <ImageWithShadow
-                src="/placeholder.svg?height=550&width=550"
-                alt="FOCUS Care team members collaborating"
+                src="/images/about_hero.jpg"
+                alt="Focus Care team members collaborating"
                 width={550}
                 height={550}
                 className="rounded-lg object-cover"
@@ -48,8 +48,8 @@ export default function AboutPage() {
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
             <div className="space-y-4 order-last lg:order-first">
               <ImageWithShadow
-                src="/placeholder.svg?height=400&width=600"
-                alt="FOCUS Care mission visualization"
+                src="/images/mission_visualization.jpg"
+                alt="Focus Care mission visualization"
                 width={600}
                 height={400}
                 className="rounded-lg object-cover"
@@ -63,7 +63,7 @@ export default function AboutPage() {
                 Empowering Care Through Technology
               </h2>
               <p className="text-gray-700 dark:text-gray-300">
-                At FOCUS Care, our mission is to provide specialized IT solutions that enable disability and mental
+                At Focus Care, our mission is to provide specialized IT solutions that enable disability and mental
                 health service providers to focus on what matters most: delivering exceptional care to the individuals
                 they support.
               </p>
@@ -89,7 +89,7 @@ export default function AboutPage() {
                 What Drives Us
               </h2>
               <p className="max-w-[900px] text-gray-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-300">
-                Our core values guide everything we do at FOCUS Care.
+                Our core values guide everything we do at Focus Care.
               </p>
             </div>
           </div>
@@ -97,7 +97,7 @@ export default function AboutPage() {
             <Card className="bg-white dark:bg-slate-800">
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <CheckCircle className="mr-2 h-5 w-5 text-secondary" />
+                  <Heart className="mr-2 h-5 w-5 text-secondary" />
                   Empathy
                 </CardTitle>
               </CardHeader>
@@ -111,7 +111,7 @@ export default function AboutPage() {
             <Card className="bg-white dark:bg-slate-800">
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <CheckCircle className="mr-2 h-5 w-5 text-secondary" />
+                  <Star className="mr-2 h-5 w-5 text-secondary" />
                   Excellence
                 </CardTitle>
               </CardHeader>
@@ -125,7 +125,7 @@ export default function AboutPage() {
             <Card className="bg-white dark:bg-slate-800">
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <CheckCircle className="mr-2 h-5 w-5 text-secondary" />
+                  <Lightbulb className="mr-2 h-5 w-5 text-secondary" />
                   Innovation
                 </CardTitle>
               </CardHeader>
@@ -139,7 +139,7 @@ export default function AboutPage() {
             <Card className="bg-white dark:bg-slate-800">
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <CheckCircle className="mr-2 h-5 w-5 text-secondary" />
+                  <Shield className="mr-2 h-5 w-5 text-secondary" />
                   Security
                 </CardTitle>
               </CardHeader>
@@ -153,7 +153,7 @@ export default function AboutPage() {
             <Card className="bg-white dark:bg-slate-800">
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <CheckCircle className="mr-2 h-5 w-5 text-secondary" />
+                  <Users className="mr-2 h-5 w-5 text-secondary" />
                   Collaboration
                 </CardTitle>
               </CardHeader>
@@ -167,7 +167,7 @@ export default function AboutPage() {
             <Card className="bg-white dark:bg-slate-800">
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <CheckCircle className="mr-2 h-5 w-5 text-secondary" />
+                  <Accessibility className="mr-2 h-5 w-5 text-secondary" />
                   Accessibility
                 </CardTitle>
               </CardHeader>
@@ -197,61 +197,22 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
-          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 justify-items-center">
             {/* Team Member 1 */}
             <div className="bg-white p-8 rounded-lg shadow-md text-center dark:bg-slate-800">
               <div className="mb-4">
                 <ImageWithShadow
-                  src="/placeholder.svg?height=200&width=200"
-                  alt="Jane Smith - Founder & CEO"
+                  src="/images/team/jovanie_rosario.jpg"
+                  alt="Jovanie Rosario - Founder & CEO"
                   width={200}
                   height={200}
                   className="rounded-full object-cover mx-auto"
                 />
               </div>
-              <h3 className="text-xl font-bold mb-1 text-primary dark:text-white">Jane Smith</h3>
+              <h3 className="text-xl font-bold mb-1 text-primary dark:text-white">Jovanie Rosario</h3>
               <p className="text-secondary font-medium mb-4">Founder & CEO</p>
               <p className="text-gray-700 dark:text-gray-300">
-                With over 15 years of experience in healthcare IT, Jane founded FOCUS Care to address the unique
-                technology needs of disability service providers.
-              </p>
-            </div>
-
-            {/* Team Member 2 */}
-            <div className="bg-white p-8 rounded-lg shadow-md text-center dark:bg-slate-800">
-              <div className="mb-4">
-                <ImageWithShadow
-                  src="/placeholder.svg?height=200&width=200"
-                  alt="David Johnson - CTO"
-                  width={200}
-                  height={200}
-                  className="rounded-full object-cover mx-auto"
-                />
-              </div>
-              <h3 className="text-xl font-bold mb-1 text-primary dark:text-white">David Johnson</h3>
-              <p className="text-secondary font-medium mb-4">Chief Technology Officer</p>
-              <p className="text-gray-700 dark:text-gray-300">
-                David brings extensive experience in developing secure, compliant IT systems for healthcare
-                organizations.
-              </p>
-            </div>
-
-            {/* Team Member 3 */}
-            <div className="bg-white p-8 rounded-lg shadow-md text-center dark:bg-slate-800">
-              <div className="mb-4">
-                <ImageWithShadow
-                  src="/placeholder.svg?height=200&width=200"
-                  alt="Maria Rodriguez - Client Success Manager"
-                  width={200}
-                  height={200}
-                  className="rounded-full object-cover mx-auto"
-                />
-              </div>
-              <h3 className="text-xl font-bold mb-1 text-primary dark:text-white">Maria Rodriguez</h3>
-              <p className="text-secondary font-medium mb-4">Client Success Manager</p>
-              <p className="text-gray-700 dark:text-gray-300">
-                With a background in disability services, Maria ensures our solutions truly meet the needs of the
-                organizations we serve.
+                Bringing over a decade of expertise in the technical space, Jovanie founded Focus Care, driven by his profound understanding and dedication cultivated through significant experience addressing the technical challenges within the Intellectual Disability and Autism sector. This unique blend of experience drives his commitment to addressing the specific technology needs of disability service providers.
               </p>
             </div>
           </div>
@@ -265,7 +226,7 @@ export default function AboutPage() {
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Ready to Work With Us?</h2>
               <p className="max-w-[900px] text-secondary md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Contact our team today to discuss how FOCUS Care can support your organization's IT needs.
+                Contact our team today to discuss how Focus Care can support your organization's IT needs.
               </p>
             </div>
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
