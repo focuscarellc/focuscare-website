@@ -89,36 +89,43 @@ export default function TestimonialsPage() {
           </div>
           <div className="mx-auto max-w-3xl py-12">
             <div className="rounded-lg bg-white p-8 shadow-lg dark:bg-slate-800">
-              <h3 className="mb-4 text-2xl font-bold text-primary dark:text-white">Disability Service Provider</h3>
+              <h3 className="mb-4 text-2xl font-bold text-primary dark:text-white">Our Client</h3>
               <p className="mb-6 text-gray-700 dark:text-gray-300">
-                A leading provider of support services for individuals with intellectual disabilities, serving over 200
-                clients across multiple locations.
+                An ODP waiver provider in Pennsylvania, Our Client offers Community Participation Support (CPS),
+                In-Home & Community Supports (IHCS), and Community Living services to 40 individuals across Montgomery,
+                Delaware, and Philadelphia Counties. Operating within the ODP 6100 and EVV regulatory framework,
+                they initially faced manual operations, scattered records, and high compliance risk.
               </p>
               <h4 className="mb-2 text-xl font-bold text-primary dark:text-white">The Challenge</h4>
-              <p className="mb-6 text-gray-700 dark:text-gray-300">
-                The organization was struggling with outdated systems that couldn't keep up with their growing needs.
-                Staff were spending too much time on administrative tasks, and there were concerns about data security
-                and compliance.
-              </p>
+              <ul className="mb-6 list-disc pl-6 text-gray-700 dark:text-gray-300">
+                <li><b>No organized system</b> for progress notes, staff files, or service documentation.</li>
+                <li><b>Manual tracking</b> of service codes and retro billing information.</li>
+                <li><b>Unstructured and inconsistent</b> progress notes and staff data.</li>
+                <li><b>EVV-required services</b> not connected to <b>Sandata</b>.</li>
+                <li><b>Underutilized AxisCare</b> with incomplete individual/service setups.</li>
+                <li><b>Billing issues</b> leading to delays and <b>denials</b>.</li>
+                <li><b>Lack of Google Workspace</b> and structured <b>digital infrastructure</b>.</li>
+              </ul>
               <h4 className="mb-2 text-xl font-bold text-primary dark:text-white">The Solution</h4>
               <p className="mb-6 text-gray-700 dark:text-gray-300">
-                Focus Care implemented a comprehensive IT solution that included:
+                Focus Care implemented a comprehensive IT solution tailored to Our Client's needs:
               </p>
               <ul className="mb-6 list-disc pl-6 text-gray-700 dark:text-gray-300">
-                <li>A secure, cloud-based client management system</li>
-                <li>Integrated scheduling and billing processes</li>
-                <li>Mobile access for staff working in the field</li>
-                <li>Comprehensive staff training and ongoing support</li>
+                <li><b>Billing Issue Resolution:</b> Identified and corrected inconsistencies, fixed prior errors, and implemented a structured billing workflow tied to AxisCare + Sandata.</li>
+                <li><b>AxisCare System Overhaul:</b> Entered all individuals, service codes, staff data, and previous shifts; standardized progress note and service entry workflows.</li>
+                <li><b>Google Workspace Implementation:</b> Created a full digital business suite, centralizing all documentation and developing structured Drive folders.</li>
+                <li><b>EVV Integration (Sandata Aggregator):</b> Connected all EVV-required services, automated verification for IHCS, and removed manual time validation.</li>
               </ul>
               <h4 className="mb-2 text-xl font-bold text-primary dark:text-white">The Results</h4>
               <p className="mb-6 text-gray-700 dark:text-gray-300">
-                Since implementing the new system, the organization has seen:
+                Since implementing Focus Care's solutions, Our Client achieved:
               </p>
               <ul className="mb-6 list-disc pl-6 text-gray-700 dark:text-gray-300">
-                <li>30% reduction in administrative time</li>
-                <li>Improved data accuracy and reporting capabilities</li>
-                <li>Enhanced compliance with regulatory requirements</li>
-                <li>Increased staff satisfaction and retention</li>
+                <li><b>Historic billing issues fully resolved:</b> Accurate, EVV-compliant billing established.</li>
+                <li><b>Significant reduction in manual effort:</b> Documentation consistency improved across all service lines.</li>
+                <li><b>Enhanced compliance and audit readiness:</b> Digital organization now fully supports regulatory requirements.</li>
+                <li><b>Increased operational efficiency:</b> Streamlined workflows leading to better staff productivity and focus on client care.</li>
+                <li><b>Positioned for stable growth:</b> Modernized infrastructure provides a solid foundation for future expansion.</li>
               </ul>
               <div className="mt-8 text-right">
                 <Link href="/contact">
