@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowRight, CheckCircle, Lightbulb, Scale, Database, Bot, DollarSign, Users } from "lucide-react"
+import { ArrowRight, CheckCircle, Lightbulb, Scale, Database, Bot, DollarSign, Users, Timer } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import ImageWithShadow from "@/components/image-with-shadow"
@@ -145,6 +145,19 @@ export default function ServicesPage() {
               <CardContent>
                 <p className="text-gray-700 dark:text-gray-300">
                   We implement comprehensive medical billing solutions, from custom software development to seamless integration with your existing systems, ensuring accuracy and efficiency for your practice.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-white dark:bg-slate-800">
+              <CardHeader>
+                <CardTitle className="flex items-center">
+                  <Timer className="mr-2 h-5 w-5 text-secondary" />
+                  Workflow Optimization
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-700 dark:text-gray-300">
+                  We streamline your staff onboarding and timekeeping processes with efficient systems and automation, reducing administrative burden and ensuring compliance.
                 </p>
               </CardContent>
             </Card>
