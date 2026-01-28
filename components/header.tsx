@@ -75,10 +75,7 @@ export default function Header() {
             <Link href="/contact">Contact Us</Link>
           </Button>
 
-<<<<<<< HEAD
           {/*
-=======
->>>>>>> 22930cc (feat: website content updates and service restructuring (manual commit by yuey))
           <div className="hidden md:flex">
             <Button
               variant="outline"
@@ -89,13 +86,8 @@ export default function Header() {
               <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
               <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
             </Button>
-<<<<<<< HEAD
           </div> 
           */}
-          
-=======
-          </div>
->>>>>>> 22930cc (feat: website content updates and service restructuring (manual commit by yuey))
 
           <Button
             variant="ghost"
@@ -155,4 +147,3 @@ export default function Header() {
     </header>
   )
 }
-
