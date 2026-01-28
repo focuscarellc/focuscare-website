@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowRight, CheckCircle, BarChart3, Shield, Server, Laptop, FileText, Clock } from "lucide-react"
+import { ArrowRight, CheckCircle, Lightbulb, Scale, Database, Bot, DollarSign, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import ImageWithShadow from "@/components/image-with-shadow"
@@ -63,7 +63,7 @@ export default function ServicesPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <BarChart3 className="mr-2 h-5 w-5 text-secondary" />
+                  <Lightbulb className="mr-2 h-5 w-5 text-secondary" />
                   IT Strategy Development
                 </CardTitle>
               </CardHeader>
@@ -77,7 +77,7 @@ export default function ServicesPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <FileText className="mr-2 h-5 w-5 text-secondary" />
+                  <Scale className="mr-2 h-5 w-5 text-secondary" />
                   Compliance Assessment
                 </CardTitle>
               </CardHeader>
@@ -90,8 +90,8 @@ export default function ServicesPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <Laptop className="mr-2 h-5 w-5 text-secondary" />
-                  Specialized EHR/CMS Implementation & Optimization
+                  <Database className="mr-2 h-5 w-5 text-secondary" />
+                  EHR/CMS Solutions
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -125,7 +125,7 @@ export default function ServicesPage() {
             <Card className="bg-white dark:bg-slate-800">
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <Server className="mr-2 h-5 w-5 text-secondary" />
+                  <Bot className="mr-2 h-5 w-5 text-secondary" />
                   Agentic AI Automation
                 </CardTitle>
               </CardHeader>
@@ -138,7 +138,7 @@ export default function ServicesPage() {
             <Card className="bg-white dark:bg-slate-800">
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <Shield className="mr-2 h-5 w-5 text-secondary" />
+                  <DollarSign className="mr-2 h-5 w-5 text-secondary" />
                   Medical Billing
                 </CardTitle>
               </CardHeader>
@@ -151,7 +151,7 @@ export default function ServicesPage() {
             <Card className="bg-white dark:bg-slate-800">
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <Clock className="mr-2 h-5 w-5 text-secondary" />
+                  <Users className="mr-2 h-5 w-5 text-secondary" />
                   Expert Program Staffing
                 </CardTitle>
               </CardHeader>
