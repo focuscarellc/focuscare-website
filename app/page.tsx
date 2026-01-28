@@ -1,11 +1,18 @@
 import Link from "next/link"
+<<<<<<< HEAD
 import { ArrowRight, Calendar, Settings, Headset, ShieldCheck, BarChart3, Shield, Users, Server, BadgeDollarSignIcon, AwardIcon, PhoneCall } from "lucide-react"
+=======
+import { ArrowRight, Calendar, Settings, Headset, ShieldCheck, BarChart3, Shield, Users, Server } from "lucide-react"
+>>>>>>> 22930cc (feat: website content updates and service restructuring (manual commit by yuey))
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import TestimonialCard from "@/components/testimonial-card"
 import ImageWithShadow from "@/components/image-with-shadow"
+<<<<<<< HEAD
 import FilloutConsultation from "./contact/fillout-consultation"
+=======
+>>>>>>> 22930cc (feat: website content updates and service restructuring (manual commit by yuey))
 
 export default function Home() {
   return (
@@ -19,6 +26,7 @@ export default function Home() {
                 Specialized IT Solutions
               </div>
               <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl text-primary dark:text-white">
+<<<<<<< HEAD
               Simplifying systems so you can focus on the care that matters most.
               </h1>
               <p className="max-w-[600px] text-gray-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-300">
@@ -31,6 +39,21 @@ export default function Home() {
                     <PhoneCall className="ml-2 h-4 w-4" />
                   </Button>
                 
+=======
+                IT Solutions for Disability & Mental Health Providers
+              </h1>
+              <p className="max-w-[600px] text-gray-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-300">
+                FOCUS Care provides tailored IT consultancy and managed services for organizations supporting
+                individuals with intellectual disabilities, autism, and mental health needs.
+              </p>
+              <div className="flex flex-col gap-2 min-[400px]:flex-row">
+                <Link href="/contact">
+                  <Button className="w-full min-[400px]:w-auto">
+                    Get Started
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+>>>>>>> 22930cc (feat: website content updates and service restructuring (manual commit by yuey))
                 <Link href="/services">
                   <Button variant="secondary" className="w-full min-[400px]:w-auto">
                     Explore Our Services
@@ -61,7 +84,11 @@ export default function Home() {
                 Our Services
               </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-primary dark:text-white">
+<<<<<<< HEAD
                 Services Tailored to Your Needs
+=======
+                Specialized IT Solutions
+>>>>>>> 22930cc (feat: website content updates and service restructuring (manual commit by yuey))
               </h2>
               <p className="max-w-[900px] text-gray-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-300">
                 We understand the unique challenges faced by providers in the disability and mental health sectors.
@@ -74,14 +101,23 @@ export default function Home() {
                 <CardHeader className="pb-2">
                   <CardTitle className="flex items-center">
                     <BarChart3 className="mr-2 h-5 w-5 text-secondary" />
+<<<<<<< HEAD
                     <a href="/services/digital-transformation" className="hover:underline">
                       Digital Transformation
                     </a>
+=======
+                    IT Consultancy
+>>>>>>> 22930cc (feat: website content updates and service restructuring (manual commit by yuey))
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription>
+<<<<<<< HEAD
                   We help you modernize your systems, streamline workflows, and improve efficiency — so you can focus on what matters most.
+=======
+                    Strategic IT planning and implementation tailored to the specific needs of disability and mental
+                    health service providers.
+>>>>>>> 22930cc (feat: website content updates and service restructuring (manual commit by yuey))
                   </CardDescription>
                 </CardContent>
               </Card>
@@ -89,14 +125,23 @@ export default function Home() {
                 <CardHeader className="pb-2">
                   <CardTitle className="flex items-center">
                     <Server className="mr-2 h-5 w-5 text-secondary" />
+<<<<<<< HEAD
                     <a href="/services/managed-it-services" className="hover:underline">
                       Accounting & HR Management 
                     </a>
+=======
+                    Managed IT Services
+>>>>>>> 22930cc (feat: website content updates and service restructuring (manual commit by yuey))
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription>
+<<<<<<< HEAD
                     With custom solutions tailored to your unique needs, we help you streamline your accounting and HR processes.
+=======
+                    Comprehensive IT management, monitoring, and support to ensure your systems run smoothly and
+                    securely.
+>>>>>>> 22930cc (feat: website content updates and service restructuring (manual commit by yuey))
                   </CardDescription>
                 </CardContent>
               </Card>
@@ -111,7 +156,12 @@ export default function Home() {
                 </CardHeader>
                 <CardContent>
                   <CardDescription>
+<<<<<<< HEAD
                   ODP & HIPAA-aligned compliance support, risk assessments, incident management, and audit-ready documentation workflows.
+=======
+                    Ensuring your IT infrastructure meets all regulatory requirements while protecting sensitive client
+                    data.
+>>>>>>> 22930cc (feat: website content updates and service restructuring (manual commit by yuey))
                   </CardDescription>
                 </CardContent>
               </Card>
@@ -147,10 +197,17 @@ export default function Home() {
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-primary dark:text-white">
+<<<<<<< HEAD
                 Why Choose Focus Care?  
               </h2>
               <p className="max-w-[900px] text-gray-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-300">
                 Rest assured, we've got you covered.
+=======
+                Why Choose FOCUS Care
+              </h2>
+              <p className="max-w-[900px] text-gray-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-300">
+                We bring specialized expertise to support organizations that make a difference.
+>>>>>>> 22930cc (feat: website content updates and service restructuring (manual commit by yuey))
               </p>
             </div>
           </div>
@@ -158,39 +215,67 @@ export default function Home() {
             <Card className="bg-white dark:bg-slate-800">
               <CardHeader>
                 <CardTitle className="flex items-center">
+<<<<<<< HEAD
                   <Users className="mr-4 h-8 w-8 text-secondary mt-0.5" />
+=======
+                  <Users className="mr-2 h-6 w-6 text-secondary mt-0.5" />
+>>>>>>> 22930cc (feat: website content updates and service restructuring (manual commit by yuey))
                   Specialized Knowledge
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-700 dark:text-gray-300">
+<<<<<<< HEAD
                   With regulatory stipulations changing frequently, we stay ahead of the curve to keep you compliant and secure.
+=======
+                  Deep understanding of the unique IT challenges faced by disability and mental health service
+                  providers.
+>>>>>>> 22930cc (feat: website content updates and service restructuring (manual commit by yuey))
                 </p>
               </CardContent>
             </Card>
             <Card className="bg-white dark:bg-slate-800">
               <CardHeader>
                 <CardTitle className="flex items-center">
+<<<<<<< HEAD
                   <BadgeDollarSignIcon className="mr-4 h-8 w-8 text-secondary mt-0.5" />
                   Saving You Time and Money
+=======
+                  <ShieldCheck className="mr-2 h-6 w-6 text-secondary mt-0.5" />
+                  Compliance Expertise
+>>>>>>> 22930cc (feat: website content updates and service restructuring (manual commit by yuey))
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-700 dark:text-gray-300">
+<<<<<<< HEAD
                   Our custom payroll and billing solutions are focused on ensuring you receive every penny you deserve.
+=======
+                  Ensuring your systems meet all regulatory requirements while maintaining the highest security
+                  standards.
+>>>>>>> 22930cc (feat: website content updates and service restructuring (manual commit by yuey))
                 </p>
               </CardContent>
             </Card>
             <Card className="bg-white dark:bg-slate-800">
               <CardHeader>
                 <CardTitle className="flex items-center">
+<<<<<<< HEAD
                   <AwardIcon className="mr-4 h-8 w-8 text-secondary mt-0.5" />
                   Deep Industry Experience
+=======
+                  <Headset className="mr-2 h-6 w-6 text-secondary mt-0.5" />
+                  Dedicated Support
+>>>>>>> 22930cc (feat: website content updates and service restructuring (manual commit by yuey))
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-700 dark:text-gray-300">
+<<<<<<< HEAD
                   We understand the nature of this field, with over 15 years of expertise in the industry.
+=======
+                  Responsive, understanding support team that appreciates the critical nature of your services.
+>>>>>>> 22930cc (feat: website content updates and service restructuring (manual commit by yuey))
                 </p>
               </CardContent>
             </Card>
@@ -216,9 +301,15 @@ export default function Home() {
           </div>
           <div className="mx-auto grid max-w-5xl gap-6 py-12 lg:grid-cols-2">
             <TestimonialCard
+<<<<<<< HEAD
               quote="I always receive more than expected with Focus Care. I will absolutely recommend them to anyone looking for a professional experience."
               author="Al Iqama LLC"
               role="Founder & CEO"
+=======
+              quote="FOCUS Care transformed our IT systems, allowing our staff to focus more on client care and less on technology issues."
+              author="Disability Service Provider"
+              role=""
+>>>>>>> 22930cc (feat: website content updates and service restructuring (manual commit by yuey))
             />
             <TestimonialCard
               quote="Their understanding of the unique challenges we face as mental health providers made all the difference. Highly recommended."
@@ -250,10 +341,19 @@ export default function Home() {
                 care delivery.
               </p>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
+<<<<<<< HEAD
               <Button variant="secondary" className="w-full min-[400px]:w-auto">
                   <FilloutConsultation/>
                     <PhoneCall className="ml-2 h-4 w-4" />
                   </Button>
+=======
+                <Link href="/contact">
+                  <Button variant="secondary" className="w-full min-[400px]:w-auto">
+                    Contact Us Today
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+>>>>>>> 22930cc (feat: website content updates and service restructuring (manual commit by yuey))
               </div>
             </div>
             <div className="space-y-4">

@@ -83,8 +83,12 @@ export default function ServicesPage() {
               </CardHeader>
               <CardContent>
                 <CardDescription>
+<<<<<<< HEAD
                   Our experts ensure your IT systems meet all regulatory requirements, including data protection,
                   privacy, and industry-specific regulations.
+=======
+                  Our experts ensure your IT systems meet all regulatory requirements, excelling in ODP 6400 regulations and staying up to date with new mandates and industry best practices. This guarantees optimal compliance standards, robust data protection and privacy, and enhanced operational effectiveness.
+>>>>>>> 22930cc (feat: website content updates and service restructuring (manual commit by yuey))
                 </CardDescription>
               </CardContent>
             </Card>
@@ -92,13 +96,21 @@ export default function ServicesPage() {
               <CardHeader>
                 <CardTitle className="flex items-center">
                   <Laptop className="mr-2 h-5 w-5 text-secondary" />
+<<<<<<< HEAD
                   Technology Selection
+=======
+                  Specialized EHR/CMS Implementation & Optimization
+>>>>>>> 22930cc (feat: website content updates and service restructuring (manual commit by yuey))
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription>
+<<<<<<< HEAD
                   We help you select the right software, hardware, and systems that meet your specific needs and
                   integrate seamlessly with your existing infrastructure.
+=======
+                  We help you select the right software, hardware, and systems, offering tailored IT solutions including custom software development to ensure regulatory compliance and enhance operational efficiency, integrating seamlessly with your existing infrastructure.
+>>>>>>> 22930cc (feat: website content updates and service restructuring (manual commit by yuey))
                 </CardDescription>
               </CardContent>
             </Card>
@@ -128,13 +140,21 @@ export default function ServicesPage() {
               <CardHeader>
                 <CardTitle className="flex items-center">
                   <Server className="mr-2 h-5 w-5 text-secondary" />
+<<<<<<< HEAD
                   Infrastructure Management
+=======
+                  Agentic AI Automation
+>>>>>>> 22930cc (feat: website content updates and service restructuring (manual commit by yuey))
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-700 dark:text-gray-300">
+<<<<<<< HEAD
                   We manage and maintain your IT infrastructure, including servers, networks, and cloud services,
                   ensuring optimal performance and reliability.
+=======
+                  Our agentic AI automation services intelligently automate routine and complex IT operations, empowering your care professionals to focus entirely on client care with enhanced efficiency and security.
+>>>>>>> 22930cc (feat: website content updates and service restructuring (manual commit by yuey))
                 </p>
               </CardContent>
             </Card>
@@ -142,13 +162,21 @@ export default function ServicesPage() {
               <CardHeader>
                 <CardTitle className="flex items-center">
                   <Shield className="mr-2 h-5 w-5 text-secondary" />
+<<<<<<< HEAD
                   Security & Monitoring
+=======
+                  Medical Billing
+>>>>>>> 22930cc (feat: website content updates and service restructuring (manual commit by yuey))
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-700 dark:text-gray-300">
+<<<<<<< HEAD
                   Our proactive security monitoring and management services protect your systems and sensitive client
                   data from threats.
+=======
+                  We implement comprehensive medical billing solutions, from custom software development to seamless integration with your existing systems, ensuring accuracy and efficiency for your practice.
+>>>>>>> 22930cc (feat: website content updates and service restructuring (manual commit by yuey))
                 </p>
               </CardContent>
             </Card>
@@ -156,13 +184,21 @@ export default function ServicesPage() {
               <CardHeader>
                 <CardTitle className="flex items-center">
                   <Clock className="mr-2 h-5 w-5 text-secondary" />
+<<<<<<< HEAD
                   24/7 Technical Support
+=======
+                  Expert Program Staffing
+>>>>>>> 22930cc (feat: website content updates and service restructuring (manual commit by yuey))
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-700 dark:text-gray-300">
+<<<<<<< HEAD
                   Our responsive support team is available around the clock to address any technical issues and minimize
                   disruption to your services.
+=======
+                  We furnish formidable experts, including program specialists, quality analysts, and behavior specialists, to complete essential tasks and meet stringent qualification requirements, ensuring seamless support and superior outcomes for your organization.
+>>>>>>> 22930cc (feat: website content updates and service restructuring (manual commit by yuey))
                 </p>
               </CardContent>
             </Card>

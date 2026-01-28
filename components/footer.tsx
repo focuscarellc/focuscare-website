@@ -23,7 +23,11 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4">
               <Link
+<<<<<<< HEAD
                 href="https://www.facebook.com/focuscarellc"
+=======
+                href="https://www.facebook.com/profile.php?id=61581579845839"
+>>>>>>> 22930cc (feat: website content updates and service restructuring (manual commit by yuey))
                 className="text-muted-foreground hover:text-secondary"
                 aria-label="Facebook"
               >
@@ -37,7 +41,11 @@ export default function Footer() {
                 <Instagram className="h-5 w-5" aria-hidden="true" />
               </Link>
               <Link
+<<<<<<< HEAD
                 href="https://www.linkedin.com/company/focuscarellc"
+=======
+                href="https://www.linkedin.com/company/focus-care-llc/"
+>>>>>>> 22930cc (feat: website content updates and service restructuring (manual commit by yuey))
                 className="text-muted-foreground hover:text-secondary"
                 aria-label="LinkedIn"
               >
