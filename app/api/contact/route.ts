@@ -1,3 +1,5 @@
+export const runtime = 'edge';
+
 import { createClient } from '@/utils/supabase/server'
 import { cookies } from 'next/headers'
 import { NextResponse } from 'next/server'
@@ -51,7 +53,8 @@ export async function POST(request: Request) {
             { error: "Database table 'contact_submissions' does not exist" },
             { status: 500 }
           )
-        } else {
+        }
+       else {
           console.error('Error checking table:', tableCheckError)
           return NextResponse.json(
             { error: `Database error: ${tableCheckError.message}` },
