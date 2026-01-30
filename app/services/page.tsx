@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowRight, CheckCircle, BarChart3, Shield, Server, Laptop, FileText, Clock } from "lucide-react"
+import { ArrowRight, CheckCircle, Lightbulb, Scale, Database, Bot, DollarSign, Users, Timer } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import ImageWithShadow from "@/components/image-with-shadow"
@@ -31,11 +31,12 @@ export default function ServicesPage() {
             </div>
             <div className="mx-auto lg:ml-auto">
               <ImageWithShadow
-                src="/placeholder.svg?height=550&width=550"
-                alt="IT professionals working with healthcare providers"
+                src="/images/services/care-provider-hero.jpg"
+                alt="Graphic illustration of a calm female care provider, emphasizing compliance, efficiency, and focus on compassionate care."
                 width={550}
                 height={550}
                 className="rounded-lg object-cover"
+                priority
               />
             </div>
           </div>
@@ -63,7 +64,7 @@ export default function ServicesPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <BarChart3 className="mr-2 h-5 w-5 text-secondary" />
+                  <Lightbulb className="mr-2 h-5 w-5 text-secondary" />
                   IT Strategy Development
                 </CardTitle>
               </CardHeader>
@@ -77,28 +78,26 @@ export default function ServicesPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <FileText className="mr-2 h-5 w-5 text-secondary" />
+                  <Scale className="mr-2 h-5 w-5 text-secondary" />
                   Compliance Assessment
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription>
-                  Our experts ensure your IT systems meet all regulatory requirements, including data protection,
-                  privacy, and industry-specific regulations.
+                  Our experts ensure your IT systems meet all regulatory requirements, excelling in ODP 6400 regulations and staying up to date with new mandates and industry best practices. This guarantees optimal compliance standards, robust data protection and privacy, and enhanced operational effectiveness.
                 </CardDescription>
               </CardContent>
             </Card>
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <Laptop className="mr-2 h-5 w-5 text-secondary" />
-                  Technology Selection
+                  <Database className="mr-2 h-5 w-5 text-secondary" />
+                  EHR/CMS Solutions
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription>
-                  We help you select the right software, hardware, and systems that meet your specific needs and
-                  integrate seamlessly with your existing infrastructure.
+                  We help you select the right software, hardware, and systems, offering tailored IT solutions including custom software development to ensure regulatory compliance and enhance operational efficiency, integrating seamlessly with your existing infrastructure.
                 </CardDescription>
               </CardContent>
             </Card>
@@ -127,42 +126,52 @@ export default function ServicesPage() {
             <Card className="bg-white dark:bg-slate-800">
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <Server className="mr-2 h-5 w-5 text-secondary" />
-                  Infrastructure Management
+                  <Bot className="mr-2 h-5 w-5 text-secondary" />
+                  Agentic AI Automation
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-700 dark:text-gray-300">
-                  We manage and maintain your IT infrastructure, including servers, networks, and cloud services,
-                  ensuring optimal performance and reliability.
+                  Our agentic AI automation services intelligently automate routine and complex IT operations, empowering your care professionals to focus entirely on client care with enhanced efficiency and security.
                 </p>
               </CardContent>
             </Card>
             <Card className="bg-white dark:bg-slate-800">
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <Shield className="mr-2 h-5 w-5 text-secondary" />
-                  Security & Monitoring
+                  <DollarSign className="mr-2 h-5 w-5 text-secondary" />
+                  Medical Billing
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-700 dark:text-gray-300">
-                  Our proactive security monitoring and management services protect your systems and sensitive client
-                  data from threats.
+                  We implement comprehensive medical billing solutions, from custom software development to seamless integration with your existing systems, ensuring accuracy and efficiency for your practice.
                 </p>
               </CardContent>
             </Card>
             <Card className="bg-white dark:bg-slate-800">
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <Clock className="mr-2 h-5 w-5 text-secondary" />
-                  24/7 Technical Support
+                  <Timer className="mr-2 h-5 w-5 text-secondary" />
+                  Workflow Optimization
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-700 dark:text-gray-300">
-                  Our responsive support team is available around the clock to address any technical issues and minimize
-                  disruption to your services.
+                  We streamline your staff onboarding and timekeeping processes with efficient systems and automation, reducing administrative burden and ensuring compliance.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-white dark:bg-slate-800">
+              <CardHeader>
+                <CardTitle className="flex items-center">
+                  <Users className="mr-2 h-5 w-5 text-secondary" />
+                  Expert Program Staffing
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-700 dark:text-gray-300">
+                  We furnish formidable experts, including program specialists, quality analysts, and behavior specialists, to complete essential tasks and meet stringent qualification requirements, ensuring seamless support and superior outcomes for your organization.
                 </p>
               </CardContent>
             </Card>
@@ -206,11 +215,12 @@ export default function ServicesPage() {
             </div>
             <div className="mx-auto order-first lg:order-last">
               <ImageWithShadow
-                src="/placeholder.svg?height=400&width=600"
-                alt="Staff training session"
+                src="/images/services/services-hero-image-remix.jpg"
+                alt="Diverse team of care professionals and tech experts collaboratively reviewing client data for efficiency and compliance."
                 width={600}
                 height={400}
                 className="rounded-lg object-cover"
+                priority
               />
             </div>
           </div>

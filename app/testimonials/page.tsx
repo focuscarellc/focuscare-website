@@ -4,9 +4,9 @@ import { Button } from "@/components/ui/button"
 import TestimonialCard from "@/components/testimonial-card"
 
 export const metadata = {
-  title: "Testimonials - FOCUS Care",
+  title: "Testimonials - Focus Care",
   description:
-    "Read what our clients say about FOCUS Care's IT solutions for disability and mental health service providers.",
+    "Read what our clients say about Focus Care's IT solutions for disability and mental health service providers.",
 }
 
 export default function TestimonialsPage() {
@@ -37,33 +37,33 @@ export default function TestimonialsPage() {
         <div className="container px-4 md:px-6">
           <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-2">
             <TestimonialCard
-              quote="FOCUS Care transformed our IT systems, allowing our staff to focus more on client care and less on technology issues. Their understanding of our unique needs as a disability service provider made all the difference."
-              author="Disability Service Provider"
+              quote="The team delivered a custom software solution that took us from 90% paperwork to dust collecting on our filing cabinets. This was essential for the growth of the company. I will absolutely recommend them to any provider in our shoes."
+              author="Community Thriving LLC"
               role=""
             />
             <TestimonialCard
-              quote="Their understanding of the unique challenges we face as mental health providers made all the difference. Highly recommended for any organization in the healthcare sector."
-              author="Mental Health Organization"
+              quote="I always receive more than expected with Focus Care. I will absolutely recommend them to anyone looking for a professional experience."
+              author="Al Iqama LLC"
               role=""
             />
             <TestimonialCard
-              quote="The team at FOCUS Care helped us implement a secure, compliant system that has streamlined our operations and improved our service delivery. Their ongoing support has been invaluable."
-              author="Autism Support Organization"
+              quote="We've been loyal to Jovanie and his agency since the beginning. Best investment I could've made for our organization."
+              author="The L.I.F.E. Group, LLC"
               role=""
             />
             <TestimonialCard
-              quote="We were struggling with outdated systems that couldn't keep up with our growing organization. FOCUS Care provided a tailored solution that has transformed how we operate."
-              author="Community Mental Health Center"
+              quote="Highly recommend, easy to work with. Looking forward to more business together."
+              author="The Salvation Army"
               role=""
             />
             <TestimonialCard
-              quote="The security and compliance expertise that FOCUS Care brings to the table is exceptional. They understand the regulatory landscape and ensure our systems meet all requirements."
-              author="Integrated Care Service"
+              quote="Focus Care allowed our team to step away from outdated documentation templates we've been using for over a decade."
+              author="Behavior Supports S&T"
               role=""
             />
             <TestimonialCard
-              quote="Our staff training sessions with FOCUS Care were excellent. They made complex technology accessible to our team, improving adoption and efficiency across the organization."
-              author="Supportive Living Network"
+              quote="Jovanie and his team got us up and running with Therap's eMAR module in under 3 days. Staff training was seamless once setup."
+              author="K.E.L.S LLC"
               role=""
             />
           </div>
@@ -82,7 +82,7 @@ export default function TestimonialsPage() {
                 Transforming Care Delivery
               </h2>
               <p className="max-w-[900px] text-gray-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-300">
-                How FOCUS Care helped a disability service provider improve their service delivery and operational
+                How Focus Care helped a disability service provider improve their service delivery and operational
                 efficiency.
               </p>
             </div>
@@ -149,7 +149,7 @@ export default function TestimonialsPage() {
                 Ready to Join Our Success Stories?
               </h2>
               <p className="max-w-[900px] text-secondary md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Contact us today to discuss how FOCUS Care can help your organization leverage technology to improve
+                Contact us today to discuss how Focus Care can help your organization leverage technology to improve
                 care delivery.
               </p>
             </div>

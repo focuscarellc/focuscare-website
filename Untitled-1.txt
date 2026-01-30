@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 NEXT_PUBLIC_SUPABASE_URL=https://niteezdaijrigpdwbype.supabase.co
+=======
+NEXT_PUBLIC_SUPABASE_URL=https://niteezdaijrigpdwbype.supabase.co
+>>>>>>> 22930cc (feat: website content updates and service restructuring (manual commit by yuey))
 NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5pdGVlemRhaWpyaWdwZHdieXBlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU5MjEwMzQsImV4cCI6MjA2MTQ5NzAzNH0.6NcasAxg9QerwKSNvpiR-TD0C8mYGPhbd-cTihEivpc

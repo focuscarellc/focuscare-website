@@ -7,8 +7,9 @@ import FilloutForm from "./fillout-form";
 import FilloutConsultation from "./fillout-consultation";
 
 export const metadata = {
-  title: "Contact Us - FOCUS Care",
-  description: "Get in touch with FOCUS Care to discuss your organization's needs and how we can help.",
+  title: "Contact Us - FOCUS Care - Specialized IT Solutions for ODP 6400 Providers in Philadelphia & PA",
+  description:
+    "Get in touch with FOCUS Care to discuss your organization's needs and how we can help. We provide specialized IT solutions for ODP 6400 providers, disability support, and mental health organizations in Philadelphia, Johnstown, and across Pennsylvania. Get expert IT consultancy and managed services.",
 }
 
 export default function ContactPage() {
@@ -190,4 +191,3 @@ export default function ContactPage() {
     </div>
   )
 }
-

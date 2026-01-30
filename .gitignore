@@ -24,4 +24,8 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+<<<<<<< HEAD
 next-env.d.ts
+=======
+next-env.d.ts
+>>>>>>> 22930cc (feat: website content updates and service restructuring (manual commit by yuey))

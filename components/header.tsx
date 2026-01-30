@@ -88,7 +88,6 @@ export default function Header() {
             </Button>
           </div> 
           */}
-          
 
           <Button
             variant="ghost"
@@ -148,4 +147,3 @@ export default function Header() {
     </header>
   )
 }
-
