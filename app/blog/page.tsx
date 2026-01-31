@@ -52,7 +52,7 @@ export default function BlogPage() {
               <CardHeader className="p-0">
                 <ImageWithShadow
                   src="/images/blog/data-security.jpg"
-                  alt="Data security and compliance"
+                  alt="Image for Elevating Care: A Digital Transformation Story"
                   width={400}
                   height={200}
                   className="aspect-video w-full rounded-t-lg object-cover"
@@ -60,20 +60,20 @@ export default function BlogPage() {
               </CardHeader>
               <CardContent className="p-6">
                 <div className="mb-2 inline-block rounded-lg bg-secondary/20 px-3 py-1 text-sm text-primary dark:text-secondary">
-                  Compliance
+                  Case Study
                 </div>
                 <CardTitle className="mb-2 text-xl text-primary dark:text-white">
-                  <Link href="/blog/data-security-compliance" className="hover:underline">
-                    Data Security and Compliance for Disability Service Providers
+                  <Link href="/blog/elevating-care-digital-transformation-story" className="hover:underline">
+                    Elevating Care: A Digital Transformation Story
                   </Link>
                 </CardTitle>
                 <CardDescription>
-                  Understanding the key regulations and implementing best practices to protect sensitive client data.
+                  Learn how Focus Care helped a Pennsylvania ODP waiver provider transform manual processes, fix billing issues, and achieve compliance through strategic IT solutions.
                 </CardDescription>
               </CardContent>
               <CardFooter className="px-6 pb-6 pt-0">
                 <Link
-                  href="/blog/data-security-compliance"
+                  href="/blog/elevating-care-digital-transformation-story"
                   className="text-sm text-primary font-medium hover:underline"
                 >
                   Read More <ArrowRight className="ml-1 inline h-4 w-4" />

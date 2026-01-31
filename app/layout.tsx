@@ -6,8 +6,9 @@ import { ThemeProvider } from "@/components/theme-provider"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import AccessibilityTools from "@/components/accessibility-tools"
+import { cn } from "@/lib/utils"
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 
 export const metadata: Metadata = {
   title: "FOCUS Care - IT Solutions for Disability & Mental Health Providers",
@@ -25,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={cn("min-h-screen bg-background font-sans antialiased", inter.variable)}>
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
