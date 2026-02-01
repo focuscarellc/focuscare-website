@@ -51,8 +51,42 @@ export default function BlogPage() {
             <Card>
               <CardHeader className="p-0">
                 <ImageWithShadow
-                  src="/images/blog/data-security.jpg"
-                  alt="Data security and compliance"
+                  src="/images/blog/digital-transformation.jpg"
+                  alt="Elevating Care: A Digital Transformation Story"
+                  width={400}
+                  height={200}
+                  className="aspect-video w-full rounded-t-lg object-cover"
+                />
+              </CardHeader>
+              <CardContent className="p-6">
+                <div className="mb-2 inline-block rounded-lg bg-secondary/20 px-3 py-1 text-sm text-primary dark:text-secondary">
+                  Case Study
+                </div>
+                <CardTitle className="mb-2 text-xl text-primary dark:text-white">
+                  <Link href="/blog/elevating-care-digital-transformation-story" className="hover:underline">
+                    Elevating Care: A Digital Transformation Story
+                  </Link>
+                </CardTitle>
+                <CardDescription>
+                  Learn how Focus Care helped a Pennsylvania ODP waiver provider transform manual processes, fix billing issues, and achieve compliance through strategic IT solutions.
+                </CardDescription>
+              </CardContent>
+              <CardFooter className="px-6 pb-6 pt-0">
+                <Link
+                  href="/blog/elevating-care-digital-transformation-story"
+                  className="text-sm text-primary font-medium hover:underline"
+                >
+                  Read More <ArrowRight className="ml-1 inline h-4 w-4" />
+                </Link>
+              </CardFooter>
+            </Card>
+
+            {/* Article 2 - Surviving the Audit */}
+            <Card>
+              <CardHeader className="p-0">
+                <ImageWithShadow
+                  src="/images/blog/surviving-the-audit.png"
+                  alt="Surviving the Audit: Digital Documentation"
                   width={400}
                   height={200}
                   className="aspect-video w-full rounded-t-lg object-cover"
@@ -63,17 +97,17 @@ export default function BlogPage() {
                   Compliance
                 </div>
                 <CardTitle className="mb-2 text-xl text-primary dark:text-white">
-                  <Link href="/blog/data-security-compliance" className="hover:underline">
-                    Data Security and Compliance for Disability Service Providers
+                  <Link href="/blog/surviving-the-audit-digital-documentation" className="hover:underline">
+                    Surviving the Audit: Why Digital Documentation is Your Best Defense
                   </Link>
                 </CardTitle>
                 <CardDescription>
-                  Understanding the key regulations and implementing best practices to protect sensitive client data.
+                  How moving from paper binders to cloud-based systems drastically reduces stress during ODP or state audits.
                 </CardDescription>
               </CardContent>
               <CardFooter className="px-6 pb-6 pt-0">
                 <Link
-                  href="/blog/data-security-compliance"
+                  href="/blog/surviving-the-audit-digital-documentation"
                   className="text-sm text-primary font-medium hover:underline"
                 >
                   Read More <ArrowRight className="ml-1 inline h-4 w-4" />
@@ -81,12 +115,12 @@ export default function BlogPage() {
               </CardFooter>
             </Card>
 
-            {/* Article 2 */}
+            {/* Article 3 - Hidden Cost of Manual Billing */}
             <Card>
               <CardHeader className="p-0">
                 <ImageWithShadow
-                  src="/placeholder.svg?height=200&width=400"
-                  alt="Article featured image"
+                  src="/images/blog/manual-billing-cost.png"
+                  alt="The Hidden Cost of Manual Billing"
                   width={400}
                   height={200}
                   className="aspect-video w-full rounded-t-lg object-cover"
@@ -94,55 +128,20 @@ export default function BlogPage() {
               </CardHeader>
               <CardContent className="p-6">
                 <div className="mb-2 inline-block rounded-lg bg-secondary/20 px-3 py-1 text-sm text-primary dark:text-secondary">
-                  Technology
+                  Revenue
                 </div>
                 <CardTitle className="mb-2 text-xl text-primary dark:text-white">
-                  <Link href="/blog/technology-enhancing-care" className="hover:underline">
-                    How Technology is Enhancing Care Delivery in Mental Health Services
+                  <Link href="/blog/hidden-cost-manual-billing-denials" className="hover:underline">
+                    The Hidden Cost of Manual Billing: What Denials Are Really Costing You
                   </Link>
                 </CardTitle>
                 <CardDescription>
-                  Exploring innovative technologies that are improving outcomes for individuals with mental health
-                  needs.
+                  How automating the flow between EVV and billing software stops revenue loss and ensures you get paid for every hour of care delivered.
                 </CardDescription>
               </CardContent>
               <CardFooter className="px-6 pb-6 pt-0">
                 <Link
-                  href="/blog/technology-enhancing-care"
-                  className="text-sm text-primary font-medium hover:underline"
-                >
-                  Read More <ArrowRight className="ml-1 inline h-4 w-4" />
-                </Link>
-              </CardFooter>
-            </Card>
-
-            {/* Article 3 */}
-            <Card>
-              <CardHeader className="p-0">
-                <ImageWithShadow
-                  src="/placeholder.svg?height=200&width=400"
-                  alt="Article featured image"
-                  width={400}
-                  height={200}
-                  className="aspect-video w-full rounded-t-lg object-cover"
-                />
-              </CardHeader>
-              <CardContent className="p-6">
-                <div className="mb-2 inline-block rounded-lg bg-secondary/20 px-3 py-1 text-sm text-primary dark:text-secondary">
-                  Best Practices
-                </div>
-                <CardTitle className="mb-2 text-xl text-primary dark:text-white">
-                  <Link href="/blog/staff-training-technology" className="hover:underline">
-                    Effective Staff Training for Technology Adoption in Care Settings
-                  </Link>
-                </CardTitle>
-                <CardDescription>
-                  Strategies for ensuring your team can effectively leverage technology to improve care delivery.
-                </CardDescription>
-              </CardContent>
-              <CardFooter className="px-6 pb-6 pt-0">
-                <Link
-                  href="/blog/staff-training-technology"
+                  href="/blog/hidden-cost-manual-billing-denials"
                   className="text-sm text-primary font-medium hover:underline"
                 >
                   Read More <ArrowRight className="ml-1 inline h-4 w-4" />
@@ -167,87 +166,43 @@ export default function BlogPage() {
             </div>
           </div>
           <div className="mx-auto grid max-w-5xl gap-8 py-12 md:grid-cols-2">
-            {/* Recent Article 1 */}
-            <Card className="bg-white dark:bg-slate-800">
-              <CardContent className="p-6">
-                <div className="mb-2 inline-block rounded-lg bg-secondary/20 px-3 py-1 text-sm text-primary dark:text-secondary">
-                  Security
-                </div>
-                <CardTitle className="mb-2 text-xl text-primary dark:text-white">
-                  <Link href="/blog/cybersecurity-healthcare" className="hover:underline">
-                    Cybersecurity Essentials for Healthcare Providers
-                  </Link>
-                </CardTitle>
-                <CardDescription>
-                  Key strategies to protect your organization from cyber threats and data breaches.
-                </CardDescription>
-                <div className="mt-4 text-sm text-gray-500 dark:text-gray-400">March 15, 2023</div>
-              </CardContent>
-            </Card>
-
-            {/* Recent Article 2 */}
-            <Card className="bg-white dark:bg-slate-800">
-              <CardContent className="p-6">
-                <div className="mb-2 inline-block rounded-lg bg-secondary/20 px-3 py-1 text-sm text-primary dark:text-secondary">
-                  Innovation
-                </div>
-                <CardTitle className="mb-2 text-xl text-primary dark:text-white">
-                  <Link href="/blog/ai-disability-services" className="hover:underline">
-                    The Role of AI in Improving Disability Services
-                  </Link>
-                </CardTitle>
-                <CardDescription>
-                  Exploring how artificial intelligence is transforming care delivery for individuals with disabilities.
-                </CardDescription>
-                <div className="mt-4 text-sm text-gray-500 dark:text-gray-400">February 28, 2023</div>
-              </CardContent>
-            </Card>
-
-            {/* Recent Article 3 */}
-            <Card className="bg-white dark:bg-slate-800">
-              <CardContent className="p-6">
-                <div className="mb-2 inline-block rounded-lg bg-secondary/20 px-3 py-1 text-sm text-primary dark:text-secondary">
-                  Compliance
-                </div>
-                <CardTitle className="mb-2 text-xl text-primary dark:text-white">
-                  <Link href="/blog/hipaa-compliance-guide" className="hover:underline">
-                    A Comprehensive Guide to HIPAA Compliance
-                  </Link>
-                </CardTitle>
-                <CardDescription>
-                  Understanding the requirements and implementing best practices for HIPAA compliance.
-                </CardDescription>
-                <div className="mt-4 text-sm text-gray-500 dark:text-gray-400">February 15, 2023</div>
-              </CardContent>
-            </Card>
-
-            {/* Recent Article 4 */}
+            {/* Recent Article 1 - Staff Training */}
             <Card className="bg-white dark:bg-slate-800">
               <CardContent className="p-6">
                 <div className="mb-2 inline-block rounded-lg bg-secondary/20 px-3 py-1 text-sm text-primary dark:text-secondary">
                   Best Practices
                 </div>
                 <CardTitle className="mb-2 text-xl text-primary dark:text-white">
-                  <Link href="/blog/remote-care-technology" className="hover:underline">
-                    Leveraging Technology for Remote Care Delivery
+                  <Link href="/blog/bridging-the-gap-staff-training" className="hover:underline">
+                    Bridging the Gap: How to Train Non-Technical Staff on New Care Systems
                   </Link>
                 </CardTitle>
                 <CardDescription>
-                  Tools and strategies for providing effective remote support to clients with disabilities and mental
-                  health needs.
+                  Strategies for onboarding DSPs and caregivers to new software without overwhelming them.
                 </CardDescription>
-                <div className="mt-4 text-sm text-gray-500 dark:text-gray-400">January 30, 2023</div>
+                <div className="mt-4 text-sm text-gray-500 dark:text-gray-400">February 3, 2026</div>
+              </CardContent>
+            </Card>
+
+            {/* Recent Article 2 - Cybersecurity */}
+            <Card className="bg-white dark:bg-slate-800">
+              <CardContent className="p-6">
+                <div className="mb-2 inline-block rounded-lg bg-secondary/20 px-3 py-1 text-sm text-primary dark:text-secondary">
+                  Security
+                </div>
+                <CardTitle className="mb-2 text-xl text-primary dark:text-white">
+                  <Link href="/blog/cybersecurity-care-providers-hipaa" className="hover:underline">
+                    Cybersecurity for Care Providers: Protecting Client Data Beyond the Locked Cabinet
+                  </Link>
+                </CardTitle>
+                <CardDescription>
+                  HIPAA compliance in the remote-work era — secure devices, encrypted email, and access controls for field staff.
+                </CardDescription>
+                <div className="mt-4 text-sm text-gray-500 dark:text-gray-400">February 4, 2026</div>
               </CardContent>
             </Card>
           </div>
-          <div className="flex justify-center">
-            <Link href="/blog/all">
-              <Button>
-                View All Articles
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
-          </div>
+          {/* All articles are displayed above */}
         </div>
       </section>
 

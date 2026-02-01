@@ -31,7 +31,7 @@ export default function IndustriesPage() {
             </div>
             <div className="mx-auto lg:ml-auto">
               <ImageWithShadow
-                src="/placeholder.svg?height=550&width=550"
+                src="/images/hero/care-illustration.png"
                 alt="Healthcare professionals using technology"
                 width={550}
                 height={550}
@@ -48,7 +48,7 @@ export default function IndustriesPage() {
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
             <div className="mx-auto order-last lg:order-first">
               <ImageWithShadow
-                src="/placeholder.svg?height=400&width=600"
+                src="/images/services/care-provider-hero.jpg"
                 alt="Intellectual disability support services"
                 width={600}
                 height={400}
@@ -137,7 +137,7 @@ export default function IndustriesPage() {
             </div>
             <div className="mx-auto">
               <ImageWithShadow
-                src="/placeholder.svg?height=400&width=600"
+                src="/images/mission_visualization.jpg"
                 alt="Autism support services"
                 width={600}
                 height={400}
@@ -154,7 +154,7 @@ export default function IndustriesPage() {
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
             <div className="mx-auto order-last lg:order-first">
               <ImageWithShadow
-                src="/placeholder.svg?height=400&width=600"
+                src="/images/blog/digital-transformation.jpg"
                 alt="Mental health services"
                 width={600}
                 height={400}

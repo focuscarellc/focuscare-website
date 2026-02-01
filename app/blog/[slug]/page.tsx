@@ -1,27 +1,51 @@
-// focuscare-website/app/blog/[slug]/page.tsx
-
 import { Metadata } from 'next';
+import fs from 'fs/promises';
+import path from 'path';
+import { notFound } from 'next/navigation';
+import ReactMarkdown from 'react-markdown';
+import FilloutConsultation from '@/components/FilloutConsultation';
+import AuthorFooter from '@/components/AuthorFooter';
+import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
 
-// Optional: Generate dynamic metadata based on the slug
+const CONTENT_DIR = path.join(process.cwd(), 'content', 'blog');
+
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const slug = params.slug.replace(/-/g, ' '); // Basic title formatting
+  const { slug } = await params;
+  const title = slug.charAt(0).toUpperCase() + slug.slice(1).replace(/-/g, ' ');
   return {
-    title: `${slug.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')} - Blog Post`,
-    description: `Read more about ${slug}.`,
+    title: `${title} - FOCUS Care Blog`,
+    description: `Read more about ${title}.`,
   };
 }
 
 export default async function BlogPostPage({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+  const { slug } = await params;
+  const filePath = path.join(CONTENT_DIR, `${slug}.md`);
 
-  // In a real application, you would fetch blog post content here
-  // based on the 'slug'. For now, we'll just display the slug.
-  
+  let markdownContent: string;
+  try {
+    markdownContent = await fs.readFile(filePath, 'utf-8');
+  } catch {
+    notFound();
+  }
+
   return (
-    <div className="flex flex-col min-h-screen items-center justify-center p-8">
-      <h1 className="text-4xl font-bold mb-4">Blog Post: {slug.replace(/-/g, ' ')}</h1>
-      <p className="text-lg text-gray-600">This is a placeholder for the blog post content for "{slug}".</p>
-      <p className="mt-4">In a full implementation, content would be fetched dynamically here.</p>
-    </div>
+    <article className="container mx-auto max-w-3xl px-4 py-12 prose prose-lg dark:prose-invert">
+      <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} components={{
+        img: ({ node, ...props }) => (
+          <span className="block my-8">
+            <img {...props} className="rounded-lg shadow-lg mx-auto" />
+          </span>
+        ),
+        h1: ({ node, ...props }) => (
+          <h1 className="text-4xl font-bold my-6" {...props} />
+        ),
+      }}>
+        {markdownContent}
+      </ReactMarkdown>
+      <AuthorFooter />
+      <FilloutConsultation />
+    </article>
   );
 }
