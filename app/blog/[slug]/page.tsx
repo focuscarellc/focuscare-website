@@ -11,7 +11,8 @@ import rehypeRaw from 'rehype-raw';
 const CONTENT_DIR = path.join(process.cwd(), 'content', 'blog');
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const title = params.slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+  const { slug } = await params;
+  const title = slug.charAt(0).toUpperCase() + slug.slice(1).replace(/-/g, ' ');
   return {
     title: `${title} - FOCUS Care Blog`,
     description: `Read more about ${title}.`,
@@ -19,7 +20,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 }
 
 export default async function BlogPostPage({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+  const { slug } = await params;
   const filePath = path.join(CONTENT_DIR, `${slug}.md`);
 
   let markdownContent: string;

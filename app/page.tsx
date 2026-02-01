@@ -74,9 +74,9 @@ export default function Home() {
                 <CardHeader className="pb-2">
                   <CardTitle className="flex items-center">
                     <BarChart3 className="mr-2 h-5 w-5 text-secondary" />
-                    <a href="/services/digital-transformation" className="hover:underline">
+                    <Link href="/services#consultancy" className="hover:underline">
                       Digital Transformation
-                    </a>
+                    </Link>
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -89,9 +89,9 @@ export default function Home() {
                 <CardHeader className="pb-2">
                   <CardTitle className="flex items-center">
                     <Server className="mr-2 h-5 w-5 text-secondary" />
-                    <a href="/services/managed-it-services" className="hover:underline">
+                    <Link href="/services#managed-services" className="hover:underline">
                       Accounting & HR Management 
-                    </a>
+                    </Link>
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -221,9 +221,9 @@ export default function Home() {
               role="Founder & CEO"
             />
             <TestimonialCard
-              quote="Their understanding of the unique challenges we face as mental health providers made all the difference. Highly recommended."
-              author="Mental Health Organization"
-              role=""
+              quote="We've been loyal to Jovanie and his agency since the beginning. Best investment I could've made for our organization."
+              author="The L.I.F.E. Group, LLC"
+              role="Founder & CEO"
             />
           </div>
           <div className="flex justify-center">

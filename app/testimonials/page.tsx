@@ -49,7 +49,7 @@ export default function TestimonialsPage() {
             <TestimonialCard
               quote="We've been loyal to Jovanie and his agency since the beginning. Best investment I could've made for our organization."
               author="The L.I.F.E. Group, LLC"
-              role=""
+              role="Founder & CEO"
             />
             <TestimonialCard
               quote="Highly recommend, easy to work with. Looking forward to more business together."
@@ -128,7 +128,7 @@ export default function TestimonialsPage() {
                 <li><b>Positioned for stable growth:</b> Modernized infrastructure provides a solid foundation for future expansion.</li>
               </ul>
               <div className="mt-8 text-right">
-                <Link href="/contact">
+                <Link href="/blog/elevating-care-digital-transformation-story">
                   <Button className="bg-primary text-white hover:bg-primary/90">
                     Read Full Case Study
                     <ArrowRight className="ml-2 h-4 w-4" />

@@ -16,7 +16,6 @@ export const metadata: Metadata = {
     "Specialized IT consultancy and managed services for providers supporting individuals with intellectual disabilities, autism, and mental health needs.",
   keywords:
     "IT consultancy for healthcare providers, managed IT services for disability support, healthcare IT solutions, mental health IT services",
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -42,7 +41,3 @@ export default function RootLayout({
     </html>
   )
 }
-
-
-
-import './globals.css'
