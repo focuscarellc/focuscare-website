@@ -39,12 +39,12 @@ export default function TestimonialsPage() {
             <TestimonialCard
               quote="The team delivered a custom software solution that took us from 90% paperwork to dust collecting on our filing cabinets. This was essential for the growth of the company. I will absolutely recommend them to any provider in our shoes."
               author="Community Thriving LLC"
-              role=""
+              role="Founder & Executive Director"
             />
             <TestimonialCard
               quote="I always receive more than expected with Focus Care. I will absolutely recommend them to anyone looking for a professional experience."
               author="Al Iqama LLC"
-              role=""
+              role="Founder & CEO"
             />
             <TestimonialCard
               quote="We've been loyal to Jovanie and his agency since the beginning. Best investment I could've made for our organization."
@@ -54,17 +54,17 @@ export default function TestimonialsPage() {
             <TestimonialCard
               quote="Highly recommend, easy to work with. Looking forward to more business together."
               author="The Salvation Army"
-              role=""
+              role="Program Director"
             />
             <TestimonialCard
               quote="Focus Care allowed our team to step away from outdated documentation templates we've been using for over a decade."
               author="Behavior Supports S&T"
-              role=""
+              role="Founder & CEO"
             />
             <TestimonialCard
               quote="Jovanie and his team got us up and running with Therap's eMAR module in under 3 days. Staff training was seamless once setup."
               author="K.E.L.S LLC"
-              role=""
+              role="Founder & Executive Director"
             />
           </div>
         </div>
