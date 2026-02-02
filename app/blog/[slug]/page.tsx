@@ -10,6 +10,13 @@ import rehypeRaw from 'rehype-raw';
 
 const CONTENT_DIR = path.join(process.cwd(), 'content', 'blog');
 
+export async function generateStaticParams() {
+  const files = await fs.readdir(CONTENT_DIR);
+  return files
+    .filter((f) => f.endsWith('.md'))
+    .map((f) => ({ slug: f.replace(/\.md$/, '') }));
+}
+
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const { slug } = await params;
   const title = slug.charAt(0).toUpperCase() + slug.slice(1).replace(/-/g, ' ');
