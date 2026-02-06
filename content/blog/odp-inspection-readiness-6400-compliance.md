@@ -58,22 +58,15 @@ We're not here to sell you another platform you won't use. FocusCare's approach 
 3. **We train your staff** — so the system actually gets used
 4. **We stay available** — because compliance is ongoing, not a one-time fix
 
-## Start With the Basics: Our Free 6400 Checklist
+## Start Here: Free 6400 Self-Inspection Checklist
 
 Before you overhaul your entire system, start with a simple question: *Do you know what inspectors are actually looking for?*
 
-We put together a **free 6400 Compliance Starter Kit** with the exact tools our consultants use with clients:
+We created a **free Self-Inspection Checklist** covering every 55 PA Code §6400 requirement—the same tool our consultants use when auditing provider workflows. Use it to walk through your own documentation before an inspector does.
 
-* ✅ **Self-Inspection Checklist** — Every 6400 requirement in one scannable document
-* ✅ **Top 20 Common Citations Guide** — The violations we see over and over (and how to avoid them)
-* ✅ **Annual Training Tracker** — Never miss a certification renewal again
-* ✅ **Staff Onboarding Checklist** — Day 1 to Day 180, fully mapped to compliance requirements
-* ✅ **Incident Reporting SOP** — EIM-ready procedure your staff can actually follow
-* ✅ **Quick Reference Card** — Key contacts, timelines, and emergency procedures on one printable card
+No email sequences. No sales calls. Just a useful document you can download and start using today.
 
-No email sequences. No sales calls. Just useful documents you can start using today.
-
-<a href="/compliance-kit" class="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white bg-secondary hover:bg-secondary/90 rounded-lg transition-colors no-underline">Download the Free Starter Kit →</a>
+<a href="https://focuscarellc.gumroad.com/l/free-inspection-checklist" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; padding: 0.75rem 1.5rem; font-size: 1rem; font-weight: 600; color: #19204e; background-color: #3fd0c3; border-radius: 0.5rem; text-decoration: none; transition: background-color 0.2s;">Download the Free Checklist →</a>
 
 ---
 
