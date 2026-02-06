@@ -14,7 +14,7 @@ export default function BlogPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-light dark:bg-gradient-dark">
+      <section className="w-full py-8 md:py-12 lg:py-16 bg-gradient-light dark:bg-gradient-dark">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
@@ -34,7 +34,7 @@ export default function BlogPage() {
       </section>
 
       {/* Featured Articles */}
-      <section className="w-full py-12 md:py-24 lg:py-32">
+      <section className="w-full py-8 md:py-12 lg:py-16">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
@@ -46,7 +46,7 @@ export default function BlogPage() {
               </p>
             </div>
           </div>
-          <div className="mx-auto grid max-w-5xl gap-8 py-12 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto grid max-w-5xl gap-6 py-8 md:grid-cols-2 lg:grid-cols-3">
             {/* Article 1 - ODP Inspection Readiness (Latest) */}
             <Card>
               <CardHeader className="p-0">
@@ -156,7 +156,7 @@ export default function BlogPage() {
       </section>
 
       {/* Recent Articles */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-brand-bg/50 dark:bg-primary/30">
+      <section className="w-full py-8 md:py-12 lg:py-16 bg-brand-bg/50 dark:bg-primary/30">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
@@ -168,7 +168,7 @@ export default function BlogPage() {
               </p>
             </div>
           </div>
-          <div className="mx-auto grid max-w-5xl gap-8 py-12 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto grid max-w-5xl gap-6 py-8 md:grid-cols-2 lg:grid-cols-3">
             {/* Recent Article 1 - Cybersecurity */}
             <Card className="bg-white dark:bg-slate-800 overflow-hidden">
               <CardHeader className="p-0">
@@ -254,7 +254,7 @@ export default function BlogPage() {
       </section>
 
       {/* Resources Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32">
+      <section className="w-full py-8 md:py-12 lg:py-16">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
@@ -266,7 +266,7 @@ export default function BlogPage() {
               </p>
             </div>
           </div>
-          <div className="mx-auto grid max-w-5xl gap-8 py-12 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto grid max-w-5xl gap-6 py-8 md:grid-cols-2 lg:grid-cols-3">
             {/* Resource 1 */}
             <Card>
               <CardContent className="p-6">
@@ -373,7 +373,7 @@ export default function BlogPage() {
       </section>
 
       {/* Newsletter Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-primary text-primary-foreground">
+      <section className="w-full py-8 md:py-12 lg:py-16 bg-primary text-primary-foreground">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
