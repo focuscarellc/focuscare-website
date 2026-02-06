@@ -47,12 +47,12 @@ export default function BlogPage() {
             </div>
           </div>
           <div className="mx-auto grid max-w-5xl gap-8 py-12 md:grid-cols-2 lg:grid-cols-3">
-            {/* Article 1 */}
+            {/* Article 1 - ODP Inspection Readiness (Latest) */}
             <Card>
               <CardHeader className="p-0">
                 <ImageWithShadow
-                  src="/images/blog/digital-transformation.jpg"
-                  alt="Elevating Care: A Digital Transformation Story"
+                  src="/images/blog/odp-inspection-ready.png"
+                  alt="ODP Inspection Readiness"
                   width={400}
                   height={200}
                   className="aspect-video w-full rounded-t-lg object-cover"
@@ -60,20 +60,21 @@ export default function BlogPage() {
               </CardHeader>
               <CardContent className="p-6">
                 <div className="mb-2 inline-block rounded-lg bg-secondary/20 px-3 py-1 text-sm text-primary dark:text-secondary">
-                  Case Study
+                  Compliance
                 </div>
                 <CardTitle className="mb-2 text-xl text-primary dark:text-white">
-                  <Link href="/blog/elevating-care-digital-transformation-story" className="hover:underline">
-                    Elevating Care: A Digital Transformation Story
+                  <Link href="/blog/odp-inspection-readiness-6400-compliance" className="hover:underline">
+                    That Pit in Your Stomach Before an ODP Inspection? Here's How to Fix It
                   </Link>
                 </CardTitle>
                 <CardDescription>
-                  Learn how Focus Care helped a Pennsylvania ODP waiver provider transform manual processes, fix billing issues, and achieve compliance through strategic IT solutions.
+                  Why good providers still get cited, the 6400 sections that trip up providers, and how to go from anxiety to confidence.
                 </CardDescription>
+                <div className="mt-4 text-sm text-gray-500 dark:text-gray-400">February 6, 2026</div>
               </CardContent>
               <CardFooter className="px-6 pb-6 pt-0">
                 <Link
-                  href="/blog/elevating-care-digital-transformation-story"
+                  href="/blog/odp-inspection-readiness-6400-compliance"
                   className="text-sm text-primary font-medium hover:underline"
                 >
                   Read More <ArrowRight className="ml-1 inline h-4 w-4" />
@@ -104,6 +105,7 @@ export default function BlogPage() {
                 <CardDescription>
                   How moving from paper binders to cloud-based systems drastically reduces stress during ODP or state audits.
                 </CardDescription>
+                <div className="mt-4 text-sm text-gray-500 dark:text-gray-400">February 5, 2026</div>
               </CardContent>
               <CardFooter className="px-6 pb-6 pt-0">
                 <Link
@@ -138,6 +140,7 @@ export default function BlogPage() {
                 <CardDescription>
                   How automating the flow between EVV and billing software stops revenue loss and ensures you get paid for every hour of care delivered.
                 </CardDescription>
+                <div className="mt-4 text-sm text-gray-500 dark:text-gray-400">February 4, 2026</div>
               </CardContent>
               <CardFooter className="px-6 pb-6 pt-0">
                 <Link
@@ -165,9 +168,45 @@ export default function BlogPage() {
               </p>
             </div>
           </div>
-          <div className="mx-auto grid max-w-5xl gap-8 py-12 md:grid-cols-2">
-            {/* Recent Article 1 - Staff Training */}
-            <Card className="bg-white dark:bg-slate-800">
+          <div className="mx-auto grid max-w-5xl gap-8 py-12 md:grid-cols-2 lg:grid-cols-3">
+            {/* Recent Article 1 - Cybersecurity */}
+            <Card className="bg-white dark:bg-slate-800 overflow-hidden">
+              <CardHeader className="p-0">
+                <ImageWithShadow
+                  src="/images/blog/cybersecurity-care.png"
+                  alt="Cybersecurity for Care Providers"
+                  width={400}
+                  height={200}
+                  className="aspect-video w-full object-cover"
+                />
+              </CardHeader>
+              <CardContent className="p-6">
+                <div className="mb-2 inline-block rounded-lg bg-secondary/20 px-3 py-1 text-sm text-primary dark:text-secondary">
+                  Security
+                </div>
+                <CardTitle className="mb-2 text-xl text-primary dark:text-white">
+                  <Link href="/blog/cybersecurity-care-providers-hipaa" className="hover:underline">
+                    Cybersecurity for Care Providers: Protecting Client Data Beyond the Locked Cabinet
+                  </Link>
+                </CardTitle>
+                <CardDescription>
+                  HIPAA compliance in the remote-work era — secure devices, encrypted email, and access controls for field staff.
+                </CardDescription>
+                <div className="mt-4 text-sm text-gray-500 dark:text-gray-400">February 4, 2026</div>
+              </CardContent>
+            </Card>
+
+            {/* Recent Article 2 - Staff Training */}
+            <Card className="bg-white dark:bg-slate-800 overflow-hidden">
+              <CardHeader className="p-0">
+                <ImageWithShadow
+                  src="/images/blog/staff-training.png"
+                  alt="Staff Training on New Care Systems"
+                  width={400}
+                  height={200}
+                  className="aspect-video w-full object-cover"
+                />
+              </CardHeader>
               <CardContent className="p-6">
                 <div className="mb-2 inline-block rounded-lg bg-secondary/20 px-3 py-1 text-sm text-primary dark:text-secondary">
                   Best Practices
@@ -184,25 +223,33 @@ export default function BlogPage() {
               </CardContent>
             </Card>
 
-            {/* Recent Article 2 - Cybersecurity */}
-            <Card className="bg-white dark:bg-slate-800">
+            {/* Recent Article 3 - Digital Transformation */}
+            <Card className="bg-white dark:bg-slate-800 overflow-hidden">
+              <CardHeader className="p-0">
+                <ImageWithShadow
+                  src="/images/blog/digital-transformation.jpg"
+                  alt="Elevating Care: A Digital Transformation Story"
+                  width={400}
+                  height={200}
+                  className="aspect-video w-full object-cover"
+                />
+              </CardHeader>
               <CardContent className="p-6">
                 <div className="mb-2 inline-block rounded-lg bg-secondary/20 px-3 py-1 text-sm text-primary dark:text-secondary">
-                  Security
+                  Case Study
                 </div>
                 <CardTitle className="mb-2 text-xl text-primary dark:text-white">
-                  <Link href="/blog/cybersecurity-care-providers-hipaa" className="hover:underline">
-                    Cybersecurity for Care Providers: Protecting Client Data Beyond the Locked Cabinet
+                  <Link href="/blog/elevating-care-digital-transformation-story" className="hover:underline">
+                    Elevating Care: A Digital Transformation Story
                   </Link>
                 </CardTitle>
                 <CardDescription>
-                  HIPAA compliance in the remote-work era — secure devices, encrypted email, and access controls for field staff.
+                  Learn how Focus Care helped a Pennsylvania ODP waiver provider transform manual processes and achieve compliance.
                 </CardDescription>
-                <div className="mt-4 text-sm text-gray-500 dark:text-gray-400">February 4, 2026</div>
+                <div className="mt-4 text-sm text-gray-500 dark:text-gray-400">February 2, 2026</div>
               </CardContent>
             </Card>
           </div>
-          {/* All articles are displayed above */}
         </div>
       </section>
 
@@ -359,4 +406,3 @@ export default function BlogPage() {
     </div>
   )
 }
-
