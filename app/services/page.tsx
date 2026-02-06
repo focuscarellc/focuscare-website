@@ -122,7 +122,7 @@ export default function ServicesPage() {
               </p>
             </div>
           </div>
-          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 lg:grid-cols-2">
             <Card className="bg-white dark:bg-slate-800">
               <CardHeader>
                 <CardTitle className="flex items-center">
