@@ -4,6 +4,7 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import Header from "@/components/header"
+import { PromoBanner } from "@/components/promo-banner"
 import Footer from "@/components/footer"
 import AccessibilityTools from "@/components/accessibility-tools"
 import GoogleAnalytics from "@/components/google-analytics"
@@ -71,6 +72,7 @@ export default function RootLayout({
             Skip to main content
           </a>
           <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+            <PromoBanner />
             <Header />
             <main id="main-content" className="min-h-screen">
               {children}
