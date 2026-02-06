@@ -7,6 +7,8 @@ import Header from "@/components/header"
 import Footer from "@/components/footer"
 import AccessibilityTools from "@/components/accessibility-tools"
 import GoogleAnalytics from "@/components/google-analytics"
+import { PostHogProvider } from "@/components/posthog-provider"
+import { PostHogPageView } from "@/components/posthog-pageview"
 import { cn } from "@/lib/utils"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
@@ -62,18 +64,21 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn("min-h-screen bg-background font-sans antialiased", inter.variable)}>
-        <GoogleAnalytics />
-        <a href="#main-content" className="skip-link">
-          Skip to main content
-        </a>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
-          <Header />
-          <main id="main-content" className="min-h-screen">
-            {children}
-          </main>
-          <AccessibilityTools />
-          <Footer />
-        </ThemeProvider>
+        <PostHogProvider>
+          <GoogleAnalytics />
+          <PostHogPageView />
+          <a href="#main-content" className="skip-link">
+            Skip to main content
+          </a>
+          <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+            <Header />
+            <main id="main-content" className="min-h-screen">
+              {children}
+            </main>
+            <AccessibilityTools />
+            <Footer />
+          </ThemeProvider>
+        </PostHogProvider>
       </body>
     </html>
   )
