@@ -1,7 +1,6 @@
-import Image from "next/image"
 import Link from "next/link"
 import { ArrowLeft, CheckCircle, FileText, Download, Shield, Clock, Users } from "lucide-react"
-import { FilloutEmbed } from "@/components/fillout-embed"
+import { ComplianceKitForm } from "@/components/compliance-kit-form"
 
 export const metadata = {
   title: "Free 6400 Compliance Starter Kit - FOCUS Care",
@@ -88,7 +87,7 @@ export default function ComplianceKitPage() {
               <p className="text-sm text-muted-foreground mb-4">
                 Enter your email and we&apos;ll send the download link instantly.
               </p>
-              <FilloutEmbed filloutId="compliance-kit-download" />
+              <ComplianceKitForm />
             </div>
           </div>
         </div>
