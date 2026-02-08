@@ -3,6 +3,7 @@ import ImageWithShadow from "@/components/image-with-shadow"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { getAllPosts, BlogPost } from "@/lib/blog"
 
 export const metadata = {
   title: "Blog & Resources - FOCUS Care",
@@ -10,7 +11,52 @@ export const metadata = {
     "Informative content about IT best practices, compliance, security, and tech advancements for healthcare providers.",
 }
 
-export default function BlogPage() {
+function ArticleCard({ post, showFooter = true }: { post: BlogPost; showFooter?: boolean }) {
+  return (
+    <Card className="bg-white dark:bg-slate-800 overflow-hidden">
+      <CardHeader className="p-0">
+        <ImageWithShadow
+          src={post.image}
+          alt={post.title}
+          width={400}
+          height={200}
+          className="aspect-video w-full rounded-t-lg object-cover"
+        />
+      </CardHeader>
+      <CardContent className="p-6">
+        <div className="mb-2 inline-block rounded-lg bg-secondary/20 px-3 py-1 text-sm text-primary dark:text-secondary">
+          {post.category}
+        </div>
+        <CardTitle className="mb-2 text-xl text-primary dark:text-white">
+          <Link href={`/blog/${post.slug}`} className="hover:underline">
+            {post.title}
+          </Link>
+        </CardTitle>
+        <CardDescription>{post.excerpt}</CardDescription>
+        <div className="mt-4 text-sm text-gray-500 dark:text-gray-400">{post.date}</div>
+      </CardContent>
+      {showFooter && (
+        <CardFooter className="px-6 pb-6 pt-0">
+          <Link
+            href={`/blog/${post.slug}`}
+            className="text-sm text-primary font-medium hover:underline"
+          >
+            Read More <ArrowRight className="ml-1 inline h-4 w-4" />
+          </Link>
+        </CardFooter>
+      )}
+    </Card>
+  )
+}
+
+export default async function BlogPage() {
+  const allPosts = await getAllPosts()
+  
+  // Featured = top 3 most recent
+  const featuredPosts = allPosts.slice(0, 3)
+  // Recent = remaining posts
+  const recentPosts = allPosts.slice(3)
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -47,211 +93,35 @@ export default function BlogPage() {
             </div>
           </div>
           <div className="mx-auto grid max-w-5xl gap-6 py-8 md:grid-cols-2 lg:grid-cols-3">
-            {/* Article 1 - ODP Inspection Readiness (Latest) */}
-            <Card>
-              <CardHeader className="p-0">
-                <ImageWithShadow
-                  src="/images/blog/odp-inspection-ready.png"
-                  alt="ODP Inspection Readiness"
-                  width={400}
-                  height={200}
-                  className="aspect-video w-full rounded-t-lg object-cover"
-                />
-              </CardHeader>
-              <CardContent className="p-6">
-                <div className="mb-2 inline-block rounded-lg bg-secondary/20 px-3 py-1 text-sm text-primary dark:text-secondary">
-                  Compliance
-                </div>
-                <CardTitle className="mb-2 text-xl text-primary dark:text-white">
-                  <Link href="/blog/odp-inspection-readiness-6400-compliance" className="hover:underline">
-                    That Pit in Your Stomach Before an ODP Inspection? Here's How to Fix It
-                  </Link>
-                </CardTitle>
-                <CardDescription>
-                  Why good providers still get cited, the 6400 sections that trip up providers, and how to go from anxiety to confidence.
-                </CardDescription>
-                <div className="mt-4 text-sm text-gray-500 dark:text-gray-400">February 6, 2026</div>
-              </CardContent>
-              <CardFooter className="px-6 pb-6 pt-0">
-                <Link
-                  href="/blog/odp-inspection-readiness-6400-compliance"
-                  className="text-sm text-primary font-medium hover:underline"
-                >
-                  Read More <ArrowRight className="ml-1 inline h-4 w-4" />
-                </Link>
-              </CardFooter>
-            </Card>
-
-            {/* Article 2 - Surviving the Audit */}
-            <Card>
-              <CardHeader className="p-0">
-                <ImageWithShadow
-                  src="/images/blog/surviving-the-audit.png"
-                  alt="Surviving the Audit: Digital Documentation"
-                  width={400}
-                  height={200}
-                  className="aspect-video w-full rounded-t-lg object-cover"
-                />
-              </CardHeader>
-              <CardContent className="p-6">
-                <div className="mb-2 inline-block rounded-lg bg-secondary/20 px-3 py-1 text-sm text-primary dark:text-secondary">
-                  Compliance
-                </div>
-                <CardTitle className="mb-2 text-xl text-primary dark:text-white">
-                  <Link href="/blog/surviving-the-audit-digital-documentation" className="hover:underline">
-                    Surviving the Audit: Why Digital Documentation is Your Best Defense
-                  </Link>
-                </CardTitle>
-                <CardDescription>
-                  How moving from paper binders to cloud-based systems drastically reduces stress during ODP or state audits.
-                </CardDescription>
-                <div className="mt-4 text-sm text-gray-500 dark:text-gray-400">February 5, 2026</div>
-              </CardContent>
-              <CardFooter className="px-6 pb-6 pt-0">
-                <Link
-                  href="/blog/surviving-the-audit-digital-documentation"
-                  className="text-sm text-primary font-medium hover:underline"
-                >
-                  Read More <ArrowRight className="ml-1 inline h-4 w-4" />
-                </Link>
-              </CardFooter>
-            </Card>
-
-            {/* Article 3 - Hidden Cost of Manual Billing */}
-            <Card>
-              <CardHeader className="p-0">
-                <ImageWithShadow
-                  src="/images/blog/manual-billing-cost.png"
-                  alt="The Hidden Cost of Manual Billing"
-                  width={400}
-                  height={200}
-                  className="aspect-video w-full rounded-t-lg object-cover"
-                />
-              </CardHeader>
-              <CardContent className="p-6">
-                <div className="mb-2 inline-block rounded-lg bg-secondary/20 px-3 py-1 text-sm text-primary dark:text-secondary">
-                  Revenue
-                </div>
-                <CardTitle className="mb-2 text-xl text-primary dark:text-white">
-                  <Link href="/blog/hidden-cost-manual-billing-denials" className="hover:underline">
-                    The Hidden Cost of Manual Billing: What Denials Are Really Costing You
-                  </Link>
-                </CardTitle>
-                <CardDescription>
-                  How automating the flow between EVV and billing software stops revenue loss and ensures you get paid for every hour of care delivered.
-                </CardDescription>
-                <div className="mt-4 text-sm text-gray-500 dark:text-gray-400">February 4, 2026</div>
-              </CardContent>
-              <CardFooter className="px-6 pb-6 pt-0">
-                <Link
-                  href="/blog/hidden-cost-manual-billing-denials"
-                  className="text-sm text-primary font-medium hover:underline"
-                >
-                  Read More <ArrowRight className="ml-1 inline h-4 w-4" />
-                </Link>
-              </CardFooter>
-            </Card>
+            {featuredPosts.map((post) => (
+              <ArticleCard key={post.slug} post={post} />
+            ))}
           </div>
         </div>
       </section>
 
       {/* Recent Articles */}
-      <section className="w-full py-8 md:py-12 lg:py-16 bg-brand-bg/50 dark:bg-primary/30">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-primary dark:text-white">
-                Recent Articles
-              </h2>
-              <p className="max-w-[900px] text-gray-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-300">
-                Stay up-to-date with our latest insights and industry news.
-              </p>
+      {recentPosts.length > 0 && (
+        <section className="w-full py-8 md:py-12 lg:py-16 bg-brand-bg/50 dark:bg-primary/30">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-primary dark:text-white">
+                  Recent Articles
+                </h2>
+                <p className="max-w-[900px] text-gray-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-300">
+                  Stay up-to-date with our latest insights and industry news.
+                </p>
+              </div>
+            </div>
+            <div className="mx-auto grid max-w-5xl gap-6 py-8 md:grid-cols-2 lg:grid-cols-3">
+              {recentPosts.map((post) => (
+                <ArticleCard key={post.slug} post={post} showFooter={false} />
+              ))}
             </div>
           </div>
-          <div className="mx-auto grid max-w-5xl gap-6 py-8 md:grid-cols-2 lg:grid-cols-3">
-            {/* Recent Article 1 - Cybersecurity */}
-            <Card className="bg-white dark:bg-slate-800 overflow-hidden">
-              <CardHeader className="p-0">
-                <ImageWithShadow
-                  src="/images/blog/cybersecurity-care.png"
-                  alt="Cybersecurity for Care Providers"
-                  width={400}
-                  height={200}
-                  className="aspect-video w-full object-cover"
-                />
-              </CardHeader>
-              <CardContent className="p-6">
-                <div className="mb-2 inline-block rounded-lg bg-secondary/20 px-3 py-1 text-sm text-primary dark:text-secondary">
-                  Security
-                </div>
-                <CardTitle className="mb-2 text-xl text-primary dark:text-white">
-                  <Link href="/blog/cybersecurity-care-providers-hipaa" className="hover:underline">
-                    Cybersecurity for Care Providers: Protecting Client Data Beyond the Locked Cabinet
-                  </Link>
-                </CardTitle>
-                <CardDescription>
-                  HIPAA compliance in the remote-work era — secure devices, encrypted email, and access controls for field staff.
-                </CardDescription>
-                <div className="mt-4 text-sm text-gray-500 dark:text-gray-400">February 4, 2026</div>
-              </CardContent>
-            </Card>
-
-            {/* Recent Article 2 - Staff Training */}
-            <Card className="bg-white dark:bg-slate-800 overflow-hidden">
-              <CardHeader className="p-0">
-                <ImageWithShadow
-                  src="/images/blog/staff-training.png"
-                  alt="Staff Training on New Care Systems"
-                  width={400}
-                  height={200}
-                  className="aspect-video w-full object-cover"
-                />
-              </CardHeader>
-              <CardContent className="p-6">
-                <div className="mb-2 inline-block rounded-lg bg-secondary/20 px-3 py-1 text-sm text-primary dark:text-secondary">
-                  Best Practices
-                </div>
-                <CardTitle className="mb-2 text-xl text-primary dark:text-white">
-                  <Link href="/blog/bridging-the-gap-staff-training" className="hover:underline">
-                    Bridging the Gap: How to Train Non-Technical Staff on New Care Systems
-                  </Link>
-                </CardTitle>
-                <CardDescription>
-                  Strategies for onboarding DSPs and caregivers to new software without overwhelming them.
-                </CardDescription>
-                <div className="mt-4 text-sm text-gray-500 dark:text-gray-400">February 3, 2026</div>
-              </CardContent>
-            </Card>
-
-            {/* Recent Article 3 - Digital Transformation */}
-            <Card className="bg-white dark:bg-slate-800 overflow-hidden">
-              <CardHeader className="p-0">
-                <ImageWithShadow
-                  src="/images/blog/digital-transformation.jpg"
-                  alt="Elevating Care: A Digital Transformation Story"
-                  width={400}
-                  height={200}
-                  className="aspect-video w-full object-cover"
-                />
-              </CardHeader>
-              <CardContent className="p-6">
-                <div className="mb-2 inline-block rounded-lg bg-secondary/20 px-3 py-1 text-sm text-primary dark:text-secondary">
-                  Case Study
-                </div>
-                <CardTitle className="mb-2 text-xl text-primary dark:text-white">
-                  <Link href="/blog/elevating-care-digital-transformation-story" className="hover:underline">
-                    Elevating Care: A Digital Transformation Story
-                  </Link>
-                </CardTitle>
-                <CardDescription>
-                  Learn how Focus Care helped a Pennsylvania ODP waiver provider transform manual processes and achieve compliance.
-                </CardDescription>
-                <div className="mt-4 text-sm text-gray-500 dark:text-gray-400">February 2, 2026</div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Resources Section */}
       <section className="w-full py-8 md:py-12 lg:py-16">

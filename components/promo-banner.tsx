@@ -25,7 +25,7 @@ export function PromoBanner() {
   if (!isHydrated || !isVisible) return null
 
   return (
-    <div className="relative bg-gradient-to-r from-brand-teal to-teal-600 text-white">
+    <div className="relative bg-gradient-to-r from-orange-500 to-orange-600 text-white">
       <div className="container mx-auto px-4 py-2.5">
         <div className="flex items-center justify-center gap-2 text-sm md:text-base">
           <Download className="h-4 w-4 shrink-0" />

@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import TestimonialCard from "@/components/testimonial-card"
 import ImageWithShadow from "@/components/image-with-shadow"
 import FilloutConsultation from "./contact/fillout-consultation"
+import LatestBlogPost from "@/components/latest-blog-post"
 
 export default function Home() {
   return (
@@ -51,6 +52,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Latest Blog Post */}
+      <LatestBlogPost />
 
       {/* Services Overview */}
       <section className="w-full py-12 md:py-24 lg:py-32">
