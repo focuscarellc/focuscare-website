@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server"
 
+export const runtime = 'edge'
+
 // Lead capture endpoint for compliance kit downloads
 // Stores leads and can forward to webhook/email service
 
@@ -56,7 +58,7 @@ export async function POST(req: NextRequest) {
     if (mailjetApiKey && mailjetSecretKey) {
       try {
         // Add to Mailjet contact list
-        const auth = Buffer.from(`${mailjetApiKey}:${mailjetSecretKey}`).toString("base64")
+        const auth = btoa(`${mailjetApiKey}:${mailjetSecretKey}`)
         await fetch("https://api.mailjet.com/v3/REST/contact", {
           method: "POST",
           headers: {

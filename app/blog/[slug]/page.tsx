@@ -10,6 +10,8 @@ import rehypeRaw from 'rehype-raw';
 
 const CONTENT_DIR = path.join(process.cwd(), 'content', 'blog');
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   const files = await fs.readdir(CONTENT_DIR);
   return files
