@@ -2,7 +2,7 @@
 
 **Date:** March 13, 2026
 
-![Featured Image: Staff Training Compliance](/images/blog/odp-myodp-training-certificate-change-2025.png)
+![Featured Image: Staff Training Compliance](/images/blog/staff-training.png)
 
 **TL;DR:** ODP no longer issues individual training certificates for most courses. Staff must now pull a MyTranscript report from MyODP to verify completion — and medication administration records live on a separate platform entirely. Here's what your team needs to do right now.
 
