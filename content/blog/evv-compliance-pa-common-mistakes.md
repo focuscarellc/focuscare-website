@@ -2,7 +2,7 @@
 
 **Date:** March 24, 2026
 
-![Featured Image: EVV Compliance](/images/blog/evv-compliance-pa.png)
+![Featured Image: EVV Compliance](/images/blog/odp-inspection-ready.png)
 
 **TL;DR:** Pennsylvania's EVV mandate trips up more providers than it should. Missed clock-outs, location mismatches, undocumented overrides, and poor reconciliation practices are the most common issues auditors find. Here's what's going wrong and what to do about it.
 
