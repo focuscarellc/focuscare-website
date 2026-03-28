@@ -6,6 +6,17 @@ import { Card, CardContent, CardTitle, CardDescription } from "@/components/ui/c
 export const metadata = {
   title: "Staff Training Toolkit - FOCUS Care",
   description: "Resources to help you train your staff on using technology effectively in care delivery.",
+  openGraph: {
+    title: "Staff Training Toolkit - FOCUS Care",
+    description: "Resources to help you train your staff on using technology effectively in care delivery.",
+    images: ["/og/training-toolkit-og.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Staff Training Toolkit - FOCUS Care",
+    description: "Resources to help you train your staff on using technology effectively in care delivery.",
+    images: ["/og/training-toolkit-og.png"],
+  },
 }
 
 const modules = [

@@ -18,7 +18,8 @@ const siteUrl = "https://focuscarellc.com"
 const siteTitle = "FOCUS Care - IT Solutions for Disability & Mental Health Providers"
 const siteDescription =
   "Specialized IT consultancy and managed services for providers supporting individuals with intellectual disabilities, autism, and mental health needs."
-const ogImage = `${siteUrl}/og-image.png`
+const ogImage = `${siteUrl}/og/web-caregivers-og.png`
+const twitterImage = `${siteUrl}/og/web-caregivers-twitter.png`
 
 export const metadata: Metadata = {
   title: siteTitle,
@@ -58,7 +59,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteTitle,
     description: siteDescription,
-    images: [`${siteUrl}/twitter-image.png`],
+    images: [twitterImage],
   },
 }
 

@@ -10,6 +10,19 @@ export const metadata = {
   title: "Contact Us - FOCUS Care - Specialized IT Solutions for ODP 6400 Providers in Philadelphia & PA",
   description:
     "Get in touch with FOCUS Care to discuss your organization's needs and how we can help. We provide specialized IT solutions for ODP 6400 providers, disability support, and mental health organizations in Philadelphia, Johnstown, and across Pennsylvania. Get expert IT consultancy and managed services.",
+  openGraph: {
+    title: "Contact Us - FOCUS Care - Specialized IT Solutions for ODP 6400 Providers in Philadelphia & PA",
+    description:
+      "Get in touch with FOCUS Care to discuss your organization's needs and how we can help. We provide specialized IT solutions for ODP 6400 providers, disability support, and mental health organizations in Philadelphia, Johnstown, and across Pennsylvania. Get expert IT consultancy and managed services.",
+    images: ["/og/web-caregivers-og.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Us - FOCUS Care - Specialized IT Solutions for ODP 6400 Providers in Philadelphia & PA",
+    description:
+      "Get in touch with FOCUS Care to discuss your organization's needs and how we can help. We provide specialized IT solutions for ODP 6400 providers, disability support, and mental health organizations in Philadelphia, Johnstown, and across Pennsylvania. Get expert IT consultancy and managed services.",
+    images: ["/og/web-caregivers-twitter.png"],
+  },
 }
 
 export default function ContactPage() {

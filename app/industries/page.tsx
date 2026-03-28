@@ -8,6 +8,19 @@ export const metadata = {
   title: "Industries We Serve - FOCUS Care",
   description:
     "Learn about the specialized IT solutions we provide for disability services, autism support, and mental health providers.",
+  openGraph: {
+    title: "Industries We Serve - FOCUS Care",
+    description:
+      "Learn about the specialized IT solutions we provide for disability services, autism support, and mental health providers.",
+    images: ["/og/industries-og.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Industries We Serve - FOCUS Care",
+    description:
+      "Learn about the specialized IT solutions we provide for disability services, autism support, and mental health providers.",
+    images: ["/og/industries-og.png"],
+  },
 }
 
 export default function IndustriesPage() {

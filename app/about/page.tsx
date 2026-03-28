@@ -8,6 +8,19 @@ export const metadata = {
   title: "About Us - Focus Care",
   description:
     "Learn about Focus Care's mission, values, and team expertise in providing IT solutions for disability and mental health service providers.",
+  openGraph: {
+    title: "About Us - Focus Care",
+    description:
+      "Learn about Focus Care's mission, values, and team expertise in providing IT solutions for disability and mental health service providers.",
+    images: ["/og/about-og.jpg"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us - Focus Care",
+    description:
+      "Learn about Focus Care's mission, values, and team expertise in providing IT solutions for disability and mental health service providers.",
+    images: ["/og/about-og.jpg"],
+  },
 }
 
 export default function AboutPage() {

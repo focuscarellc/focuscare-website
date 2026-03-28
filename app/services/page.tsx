@@ -8,6 +8,19 @@ export const metadata = {
   title: "Services - FOCUS Care",
   description:
     "Explore our specialized IT consultancy and managed services for disability and mental health service providers.",
+  openGraph: {
+    title: "Services - FOCUS Care",
+    description:
+      "Explore our specialized IT consultancy and managed services for disability and mental health service providers.",
+    images: ["/og/services-og.jpg"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Services - FOCUS Care",
+    description:
+      "Explore our specialized IT consultancy and managed services for disability and mental health service providers.",
+    images: ["/og/services-og.jpg"],
+  },
 }
 
 export default function ServicesPage() {

@@ -5,6 +5,17 @@ import { ArrowLeft, Monitor, CheckCircle } from "lucide-react"
 export const metadata = {
   title: "Technology Selection Guide - FOCUS Care",
   description: "A guide to help you select the right technology solutions for your organization's specific needs.",
+  openGraph: {
+    title: "Technology Selection Guide - FOCUS Care",
+    description: "A guide to help you select the right technology solutions for your organization's specific needs.",
+    images: ["/og/web-icons-og.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Technology Selection Guide - FOCUS Care",
+    description: "A guide to help you select the right technology solutions for your organization's specific needs.",
+    images: ["/og/web-icons-twitter.png"],
+  },
 }
 
 const sections = [

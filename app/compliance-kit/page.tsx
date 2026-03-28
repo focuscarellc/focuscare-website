@@ -6,6 +6,17 @@ export const metadata = {
   title: "Free 6400 Compliance Starter Kit - FOCUS Care",
   description: "Download our free compliance toolkit for Pennsylvania residential habilitation providers. Includes self-inspection checklists, training trackers, incident reporting SOPs, and more.",
   keywords: ["6400 compliance", "Pennsylvania IDD", "residential habilitation", "ODP compliance", "self-inspection checklist"],
+  openGraph: {
+    title: "Free 6400 Compliance Starter Kit - FOCUS Care",
+    description: "Download our free compliance toolkit for Pennsylvania residential habilitation providers. Includes self-inspection checklists, training trackers, incident reporting SOPs, and more.",
+    images: ["/og/compliance-kit-og.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free 6400 Compliance Starter Kit - FOCUS Care",
+    description: "Download our free compliance toolkit for Pennsylvania residential habilitation providers. Includes self-inspection checklists, training trackers, incident reporting SOPs, and more.",
+    images: ["/og/compliance-kit-og.png"],
+  },
 }
 
 const resources = [

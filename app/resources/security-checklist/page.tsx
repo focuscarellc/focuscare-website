@@ -5,6 +5,17 @@ import { ArrowLeft, CheckCircle, Shield } from "lucide-react"
 export const metadata = {
   title: "IT Security Checklist - FOCUS Care",
   description: "A comprehensive checklist to assess and improve your organization's IT security posture.",
+  openGraph: {
+    title: "IT Security Checklist - FOCUS Care",
+    description: "A comprehensive checklist to assess and improve your organization's IT security posture.",
+    images: ["/og/security-checklist-og.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "IT Security Checklist - FOCUS Care",
+    description: "A comprehensive checklist to assess and improve your organization's IT security posture.",
+    images: ["/og/security-checklist-og.png"],
+  },
 }
 
 const sections = [
