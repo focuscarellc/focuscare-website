@@ -24,16 +24,18 @@ export default async function LatestBlogPost() {
           </h2>
         </div>
 
-        <div className="max-w-5xl mx-auto space-y-6">
+        <div className="mx-auto w-full max-w-6xl space-y-6">
           {/* Featured post — large */}
-          <Link href={`/blog/${featured.slug}`} className="block group">
+          <Link href={`/blog/${featured.slug}`} className="block w-full group">
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="relative w-full h-52 sm:h-64 md:h-72">
+              <div className="relative aspect-[16/9] w-full overflow-hidden bg-muted sm:aspect-[21/9] lg:aspect-[2.4/1]">
                 <Image
                   src={featured.image}
                   alt={featured.title}
                   fill
+                  sizes="(min-width: 1280px) 1152px, (min-width: 768px) calc(100vw - 48px), calc(100vw - 32px)"
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  priority
                 />
               </div>
               <div className="p-5 md:p-6">
@@ -61,15 +63,16 @@ export default async function LatestBlogPost() {
 
           {/* Secondary posts — 2 column grid */}
           {rest.length > 0 && (
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-2">
               {rest.map((post) => (
-                <Link key={post.slug} href={`/blog/${post.slug}`} className="block group">
+                <Link key={post.slug} href={`/blog/${post.slug}`} className="block w-full group">
                   <Card className="overflow-hidden hover:shadow-lg transition-shadow h-full">
-                    <div className="relative w-full h-40 sm:h-44">
+                    <div className="relative aspect-[16/9] w-full overflow-hidden bg-muted">
                       <Image
                         src={post.image}
                         alt={post.title}
                         fill
+                        sizes="(min-width: 1280px) 552px, (min-width: 768px) calc((100vw - 72px) / 2), calc(100vw - 32px)"
                         className="object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>

@@ -1,5 +1,5 @@
 import Link from "next/link"
-import ImageWithShadow from "@/components/image-with-shadow"
+import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
@@ -13,15 +13,17 @@ export const metadata = {
 
 function ArticleCard({ post, showFooter = true }: { post: BlogPost; showFooter?: boolean }) {
   return (
-    <Card className="bg-white dark:bg-slate-800 overflow-hidden">
+    <Card className="bg-white dark:bg-slate-800 overflow-hidden h-full">
       <CardHeader className="p-0">
-        <ImageWithShadow
-          src={post.image}
-          alt={post.title}
-          width={400}
-          height={200}
-          className="aspect-video w-full rounded-t-lg object-cover"
-        />
+        <div className="relative aspect-[16/9] w-full overflow-hidden rounded-t-lg bg-muted">
+          <Image
+            src={post.image}
+            alt={post.title}
+            fill
+            sizes="(min-width: 1024px) 320px, (min-width: 768px) calc((100vw - 72px) / 2), calc(100vw - 32px)"
+            className="object-cover transition-transform duration-300 hover:scale-105"
+          />
+        </div>
       </CardHeader>
       <CardContent className="p-6">
         <div className="mb-2 inline-block rounded-lg bg-secondary/20 px-3 py-1 text-sm text-primary dark:text-secondary">
@@ -92,7 +94,7 @@ export default async function BlogPage() {
               </p>
             </div>
           </div>
-          <div className="mx-auto grid max-w-5xl gap-6 py-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-6 py-8 md:grid-cols-2 lg:grid-cols-3">
             {featuredPosts.map((post) => (
               <ArticleCard key={post.slug} post={post} />
             ))}
@@ -114,7 +116,7 @@ export default async function BlogPage() {
                 </p>
               </div>
             </div>
-            <div className="mx-auto grid max-w-5xl gap-6 py-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-6 py-8 md:grid-cols-2 lg:grid-cols-3">
               {recentPosts.map((post) => (
                 <ArticleCard key={post.slug} post={post} showFooter={false} />
               ))}
