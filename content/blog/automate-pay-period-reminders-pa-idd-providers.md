@@ -2,7 +2,7 @@
 
 **Date:** April 23, 2026
 
-![Featured Image: DSP reviewing an automated payroll reminder email on a laptop in a tidy residential care office, warm teal and navy tones, hand-drawn textured illustration style](/images/blog/automate-pay-period-reminders-pa-idd-providers.png)
+![Featured Image: Operations & Automation](/images/blog/automate-pay-period-reminders-pa-idd-providers.png)
 
 **TL;DR:** Repetitive administrative tasks at PA IDD residential agencies fail in predictable ways: they get forgotten, sent late, or executed inconsistently. That inconsistency is not just an inconvenience. It is an operational and compliance risk. Automation eliminates the variability and creates a defensible record without adding headcount.
 

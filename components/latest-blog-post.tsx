@@ -28,7 +28,7 @@ export default async function LatestBlogPost() {
           {/* Featured post — large */}
           <Link href={`/blog/${featured.slug}`} className="block w-full group">
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="relative aspect-[16/9] w-full overflow-hidden bg-muted sm:aspect-[21/9] lg:aspect-[2.4/1]">
+              <div className="relative aspect-[16/9] w-full overflow-hidden bg-muted">
                 <Image
                   src={featured.image}
                   alt={featured.title}
