@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
-
+Disallow: /redesign/
+Disallow: /api/
 Sitemap: https://focuscarellc.com/sitemap.xml

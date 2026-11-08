@@ -1,0 +1,143 @@
+{
+  "source": "vendor/focus-care-motion/studies/component-library/assets/useanimations.json",
+  "sourceSHA256": "5bb3f03ace5a1138107819a38bb68e3edbebcf29249679ac20a6d2221cf518bc",
+  "lottie": "5.13.0",
+  "dimensions": [
+    192,
+    192
+  ],
+  "ink": "#1d4ed8",
+  "notes": [
+    "Native integer frames explicitly sought, uniformly sampled to 32 frames.",
+    "Transparent lossless WebP, finite single playback.",
+    "Native JSON preserved; carrier, stroke color and playback timing adapted."
+  ],
+  "icons": {
+    "recruitment": {
+      "nativeName": "user",
+      "durationMs": 1134,
+      "frames": 32,
+      "sourceFrames": [
+        0,
+        33
+      ],
+      "files": {
+        ".webp": {
+          "file": "recruitment.webp",
+          "bytes": 686,
+          "sha256": "40792cd194f890c82d975313e054783762c8ee9f576cd4c78841dee8f7eb052a"
+        },
+        "-motion.webp": {
+          "file": "recruitment-motion.webp",
+          "bytes": 16308,
+          "sha256": "94cfd4a499e20753ef5c9d73fae4f08a0fac1bf0071220efe0455c8570e1e8b2"
+        }
+      }
+    },
+    "training": {
+      "nativeName": "folder",
+      "durationMs": 900,
+      "frames": 32,
+      "sourceFrames": [
+        0,
+        7
+      ],
+      "files": {
+        ".webp": {
+          "file": "training.webp",
+          "bytes": 832,
+          "sha256": "9dba98cfdaec9741c59670b554a43e6ab26bd2f6710a1662bbe3180e94840acd"
+        },
+        "-motion.webp": {
+          "file": "training-motion.webp",
+          "bytes": 4722,
+          "sha256": "9044429becb0eaf446fb2800e58ad776fa34ba406c70868e6c5038606c4c7b60"
+        }
+      }
+    },
+    "payroll": {
+      "nativeName": "clock",
+      "durationMs": 1334,
+      "frames": 32,
+      "sourceFrames": [
+        0,
+        39
+      ],
+      "files": {
+        ".webp": {
+          "file": "payroll.webp",
+          "bytes": 1086,
+          "sha256": "a2609022fe17a2672d08b3ce3ca02cbb55d9b3423c537fc559ce38dc1c820116"
+        },
+        "-motion.webp": {
+          "file": "payroll-motion.webp",
+          "bytes": 12164,
+          "sha256": "98bc8c694ac09d3c90b115c83773f0febcbe790b0ca1da492589d9cbbf97b443"
+        }
+      }
+    },
+    "operations": {
+      "nativeName": "clipboard",
+      "durationMs": 1134,
+      "frames": 32,
+      "sourceFrames": [
+        0,
+        33
+      ],
+      "files": {
+        ".webp": {
+          "file": "operations.webp",
+          "bytes": 432,
+          "sha256": "5731d5b4a8d5c9a0ed711bb6b442932140bf91653ca61d65a64499664dd8da51"
+        },
+        "-motion.webp": {
+          "file": "operations-motion.webp",
+          "bytes": 6902,
+          "sha256": "553688242da978c6e1b72fd3fff7d623999ffafd5b3f6efc3e8bb22e47725b1f"
+        }
+      }
+    },
+    "billing": {
+      "nativeName": "fileText",
+      "durationMs": 1334,
+      "frames": 32,
+      "sourceFrames": [
+        0,
+        39
+      ],
+      "files": {
+        ".webp": {
+          "file": "billing.webp",
+          "bytes": 520,
+          "sha256": "581f2ced6ebe29373a569181c3b06b11ade35709cdd4cc2be84bbf2b84b9aa7d"
+        },
+        "-motion.webp": {
+          "file": "billing-motion.webp",
+          "bytes": 9754,
+          "sha256": "a5469dfeff4034a92c4ff1d110840ddc9cb274d75b2e70ca0e71074ac3ee0ed9"
+        }
+      }
+    },
+    "compliance": {
+      "nativeName": "shield",
+      "durationMs": 1134,
+      "frames": 32,
+      "sourceFrames": [
+        0,
+        33
+      ],
+      "files": {
+        ".webp": {
+          "file": "compliance.webp",
+          "bytes": 732,
+          "sha256": "a698c3184e75849653847e714809cb31a850bcff26a11168cd03ddb4fcae2189"
+        },
+        "-motion.webp": {
+          "file": "compliance-motion.webp",
+          "bytes": 16172,
+          "sha256": "fbeea406bcbd0bdf39c7ee3a00b9d18ec4129a90b32564b98efe94042d5f24d7"
+        }
+      }
+    }
+  }
+}

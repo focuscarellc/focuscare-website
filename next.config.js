@@ -5,7 +5,7 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: false,
   },
   images: {
     unoptimized: true,
@@ -17,12 +17,28 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      { source: '/resources', destination: '/blog', permanent: true },
+      { source: '/testimonials', destination: '/case-studies', permanent: true },
+      { source: '/:path*/index.html', destination: '/:path*', permanent: true },
       {
         source: '/get-started',
         destination: '/contact',
         permanent: true, // 301 redirect
       },
     ]
+  },
+  async rewrites() {
+    const routes = require('./design/generated/routes.json')
+    return { beforeFiles: routes, afterFiles: [], fallback: [] }
+  },
+  async headers() {
+    return [{ source: '/redesign/:path*', headers: [{ key: 'X-Robots-Tag', value: 'noindex, follow' }] },
+      ...(process.env.SITE_PREVIEW === '1' ? [{ source: '/:path*', headers: [{ key: 'X-Robots-Tag', value: 'noindex, follow' }] }] : []),
+      { source: '/:path*', headers: [
+      { key: 'X-Content-Type-Options', value: 'nosniff' },
+      { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+      { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
+    ] }]
   },
 }
 

@@ -1,0 +1,20 @@
+/* Selected Icon Stage direction, with the shared hero CTA and ordinary list details. */
+.service-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.service-card{display:flex;flex-direction:column;min-width:0;overflow:hidden;border-radius:20px;border:1px solid var(--line);background:#fff;box-shadow:0 1px 2px rgba(15,23,42,.07),0 22px 40px -26px rgba(15,31,61,.42)}
+.service-card-stage{display:grid;place-items:center;height:156px;border-bottom:1px solid #d9e5fa;background:linear-gradient(rgba(33,87,219,.07) 1px,transparent 1px) center/24px 24px,linear-gradient(90deg,rgba(33,87,219,.07) 1px,transparent 1px) center/24px 24px,linear-gradient(180deg,#f2f7ff,#e3edff)}
+.service-card-icon{display:grid;place-items:center;width:96px;height:96px;border-radius:26px;background:linear-gradient(#fff,#f6f9ff);box-shadow:inset 0 0 0 1px #dbe6f8,inset 0 1.5px 0 #fff,0 2px 3px rgba(15,23,42,.1),0 16px 26px -14px rgba(29,78,216,.45);transition:transform 220ms var(--ease)}
+.service-card:focus-within .service-card-icon,.service-card.icon-playing .service-card-icon{transform:translateY(-3px)}
+.service-card .service-icon{display:block;position:relative;width:64px;height:64px}
+.service-card .service-icon img{display:block;width:100%;height:100%;object-fit:contain}
+.service-card .service-icon img+img{position:absolute;inset:0}
+.service-card.icon-playing .service-icon img:first-child{visibility:hidden}
+.service-card-body{padding:22px 24px 24px;flex:1}
+.service-card h3{font-size:22px;line-height:1.15;letter-spacing:-.016em;font-weight:650}
+.service-card p{margin-top:8px;font-size:15px;line-height:1.55;color:var(--text);text-wrap:pretty}
+.service-card ul{list-style:disc;padding:0 0 0 18px;margin:16px 0 0;font-size:14px;line-height:1.5;color:var(--text)}
+.service-card li+li{margin-top:6px}
+.service-card-action{padding:0 24px 24px}
+.service-card-action .button{width:100%}
+@media(max-width:1040px){.service-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}}
+@media(max-width:640px){.service-cards{grid-template-columns:1fr;gap:14px}.service-card-stage{height:116px}.service-card-icon{width:78px;height:78px;border-radius:22px}.service-card .service-icon{width:52px;height:52px}.service-card-body{padding:20px}.service-card-action{padding:0 20px 20px}}
+@media(prefers-reduced-motion:reduce){.service-card-icon{transition:none;transform:none!important}}

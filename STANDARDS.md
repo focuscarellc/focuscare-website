@@ -1,0 +1,11 @@
+# Website release standards
+
+- Offer only Recruitment, Training, Payroll, Operations, Billing and Compliance. Keep the SaaS destination separate. Every content page has a relevant contact action.
+- Keep Home and service copy brief. Bullets describe scope; metrics need a source and a clearly stated limit. No fabricated ROI, client claims, compliance guarantees or professional approvals.
+- Use the actual Motion logo, Inter, native useAnimations assets and tactile components. Preserve selected C cards, blue CTAs and plain supplemental bullets. Use only the approved founder portrait.
+- Hero: six readable workflows, one persistent carrier, a smooth loop, no Play/example badge, a quiet Pause/Resume control, working manual selection and a six-outcome reduced-motion overview. Stop offscreen and while hidden; a user pause survives lifecycle changes. Native asset failure keeps readable content.
+- Test 320, 390, 728, 1024 and 1440px, zoom/reflow, keyboard focus and reduced motion. No clipping, invisible glyphs, overflow, false state or unlabelled control. Automated accessibility checks supplement manual review.
+- Measure the shipping server response. Aim for good Core Web Vitals: LCP below 2.5s, CLS below 0.1 and INP below 200ms. Loopback throttling is lab evidence, never field compliance. Report startup long tasks separately and preserve the eye-catching motion authorized by the owner.
+- Preserve clean URLs, article content and semantic links, legal access, social links, campaign fulfillment, canonical metadata and an indexable production sitemap. Private preview builds use noindex. Unknown pages return a branded 404. Redirect aliases deliberately.
+- Contact drafts remain explicit about what has been sent. Never log lead fields or claim an email was delivered from a contact-creation request. Keep optional upstream integrations bounded and report partial failures honestly.
+- Build with type checking, audit runtime dependencies and validate the standalone artifact. Review input/output fingerprints. Deployment needs the verified existing host, rollback artifact/configuration, independent Claude and Codex assessment, then live route/asset/CTA/indexing checks. Dashboard and SaaS remain outside scope.

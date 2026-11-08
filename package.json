@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "design:build": "node design/motion-led/build.mjs && node scripts/package-design.mjs",
+    "prebuild": "npm run design:build",
+    "typecheck": "tsc --noEmit",
+    "pages:build": "npm run design:build && node scripts/build-pages.mjs"
   },
   "dependencies": {
     "@fillout/react": "^3.0.0",
@@ -48,7 +52,7 @@
     "fillout": "^1.0.0",
     "input-otp": "1.4.1",
     "lucide-react": "^0.454.0",
-    "next": "^15.5.4",
+    "next": "15.5.28",
     "next-themes": "^0.4.6",
     "postgres": "^3.4.5",
     "posthog-js": "^1.342.0",
@@ -64,17 +68,28 @@
     "sonner": "^1.7.1",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
-    "vaul": "^0.9.6",
-    "zod": "^3.24.1"
+    "vaul": "^0.9.6"
   },
   "devDependencies": {
-    "@cloudflare/next-on-pages": "^1.13.16",
-    "@tailwindcss/typography": "^0.5.19",
+    "@tailwindcss/typography": "0.5.20",
     "@types/node": "^22.15.3",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19",
-    "postcss": "^8",
+    "axe-core": "4.11.0",
+    "esbuild": "0.28.2",
+    "gsap": "3.15.0",
+    "lottie-web": "5.13.0",
+    "picomatch": "4.0.7",
+    "playwright": "1.62.1",
+    "postcss": "8.5.23",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.8.3"
+  },
+  "overrides": {
+    "sharp": "^0.35.5",
+    "postcss": "$postcss",
+    "@tailwindcss/typography": {
+      "postcss-selector-parser": "6.1.5"
+    }
   }
 }

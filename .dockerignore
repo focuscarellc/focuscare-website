@@ -9,3 +9,8 @@ README.md
 .env.test.local
 .env.production.local
 
+
+release-evidence
+design/motion-led/build
+design/motion-led/dist
+design/motion-led/seo

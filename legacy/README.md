@@ -1,0 +1,1 @@
+Archived templates from the previous website, retained for reference. They are not imported by the active app or generated marketing build. Edit design/motion-led for current website UI, content/blog for articles, and app/api for retained backend routes. Legacy dependencies do not define shipping functionality.

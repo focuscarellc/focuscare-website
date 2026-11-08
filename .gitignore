@@ -24,8 +24,18 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-<<<<<<< HEAD
 next-env.d.ts
-=======
-next-env.d.ts
->>>>>>> 22930cc (feat: website content updates and service restructuring (manual commit by yuey))
+
+# Generated release pages and design build scratch
+/design/motion-led/build/
+/design/motion-led/dist/
+/design/motion-led/seo/
+/design/generated/
+/public/redesign/
+/public/assets/
+/public/licenses/
+
+/release-evidence/
+
+/design/motion-led/assets/founder-original.jpg
+/design/motion-led/assets/founder-cutout-master.png

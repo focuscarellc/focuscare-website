@@ -1,0 +1,7 @@
+{
+  "repository": "jriizzyy/focus-care-motion",
+  "revision": "cb9f992631b0dd073963a21997ada20c8c3180c4",
+  "path": "resources/design-system/project/components/surfaces/Card.jsx",
+  "gitBlobSHA": "a062ec52a0c6a26964c93ab6d19d6c0a9d783fc4",
+  "use": "Direct Card raised-variant import in the build-time DepthCard composite. Upstream has no export named DepthCard; frame escape is the website adapter."
+}
