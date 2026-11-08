@@ -1,0 +1,42 @@
+{
+  "source": {
+    "repository": "focuscarellc/focuscare-website",
+    "revision": "beb190c5130bacc289eac36510d94bbe182d3276",
+    "path": "public/images/team/jovanie_rosario.jpg",
+    "gitBlobSHA": "0df4eb314fc6e90f82ee26138d0e0c10da80230d",
+    "bytes": 96915
+  },
+  "bioSource": "https://focuscarellc.com/about",
+  "card": {
+    "repository": "jriizzyy/focus-care-motion",
+    "revision": "cb9f992631b0dd073963a21997ada20c8c3180c4",
+    "path": "resources/design-system/project/components/surfaces/Card.jsx",
+    "gitBlobSHA": "a062ec52a0c6a26964c93ab6d19d6c0a9d783fc4",
+    "use": "Direct Card raised-variant import in the build-time DepthCard composite. Upstream has no export named DepthCard; frame escape is the website adapter."
+  },
+  "matte": "Generated background-removal alpha only, aligned to the original photograph. Original RGB is retained; near-opaque matte values normalized to opaque. No generated face or clothing pixels are used.",
+  "fidelity": {
+    "opaquePixelsCompared": 598628,
+    "equalToOriginalDecoder": 598628,
+    "maximumRGBDifference": 0
+  },
+  "variants": [
+    {
+      "width": 320,
+      "height": 278,
+      "bytes": 10130,
+      "sha256": "9a9243eae0a0b7c3b74da9ffa53c70b56556ed186ad639bc0fea908f2b4f8e18",
+      "transparent": true,
+      "embeddedEXIF": false
+    },
+    {
+      "width": 640,
+      "height": 557,
+      "bytes": 27026,
+      "sha256": "fcdd1e22c7f3dc3b8057b15af29bc42ea4a768ce3a4e060672b88b1f47d33f9e",
+      "transparent": true,
+      "embeddedEXIF": false
+    }
+  ],
+  "behavior": "Static raised surface and natural subject frame escape; no new client JavaScript, parallax or autoplay."
+}
