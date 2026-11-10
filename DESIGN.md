@@ -16,13 +16,13 @@ The owner selected a familiar SaaS presentation comparable to Zite and Cloudflar
 
 Home follows the supplied six-service reference: a two-line benefit, short audience sentence, contact CTA, six compact destinations and a short engagement sequence. No photography, broad consultancy inventory or invented proof strip.
 
-Service summaries state a benefit; bullets name supported capabilities. Detail pages contain one value statement, three bullets, one labeled example and a native disclosure for next steps. Other services remain findable through simple text links.
+Service summaries state a benefit; bullets name supported capabilities. Detail heroes pair one value statement, three bullets and a contact CTA with a concise animated workflow. A native disclosure explains next steps. Other services remain findable through simple text links.
 
 The header has three destination links and one contact action. Mobile uses native details/summary; Escape closes and returns focus. Footer legal and social links remain text, with the software destination separate from services.
 
 Examples use ordinary record lists, counts and workflow stages. Blue identifies the active stage. Native check/menu icons come from useAnimations through Lottie 5.13.0; no icon substitutes were drawn. The example numbers are synthetic and labeled beside the artifact.
 
-Detail-page motion plays on intent; Home cycles automatically as approved below. Both seek from absolute time, stop offscreen/hidden and honor reduced motion/Save-Data. Optional icon failure leaves the records and stage sequence usable. No looping motion outside the approved Home hero and no universal entrance animation.
+Home cycles through six workflows; each service hero autoplays only its own short story, as approved November 10. Both use the same Motion surfaces, spring camera and native icons, seek from absolute time, and stop offscreen or hidden. Reduced motion shows a complete static outcome; Save-Data skips the optional icon runtime. There is no Play button or example badge in these hero illustrations. A small Pause/Resume control provides a reading state. No universal entrance animation.
 
 Contact prepares a mailto draft with two required fields. It preserves service context and cleans up validation references. It does not send a message or book an appointment. Production delivery remains a separate release dependency.
 

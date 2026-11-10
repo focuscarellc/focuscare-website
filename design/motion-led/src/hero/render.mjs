@@ -3,6 +3,7 @@
 // without JS; rail items are real service links until the runtime upgrades them to buttons.
 import { readFileSync } from 'node:fs';
 import { WF } from './data.mjs';
+import { SERVICE_WF } from './service-data.mjs';
 
 // The pinned geometry module sits under a CommonJS package scope, so it is evaluated
 // unchanged as an ES module from its own source text (vendor files are never edited).
@@ -24,18 +25,21 @@ function chassis(w = 400, h = 286, r = 22) {
     + `<path class="edge" d="${rr(0, 0, w, h, r)}" fill="none" stroke="#dbe6f8" stroke-width="1" vector-effect="non-scaling-stroke"/></svg>`;
 }
 
-export function renderHeroArt(assetBase = './assets/', linkFor = id => `services/${id}/index.html`) {
+export function renderHeroArt(assetBase = './assets/', linkFor = id => `services/${id}/index.html`, workflowId = '') {
   const icon = id => `${assetBase}service-icons/${id}.webp`;
-  const w = WF[0], st = w.s.begin, last = w.s.settled.note;
+  const single = !!workflowId;
+  const w = single ? SERVICE_WF.find(w => w.id === workflowId) : WF[0];
+  if (!w) throw Error('Unknown service workflow: ' + workflowId);
+  const st = single ? w.s.settled : w.s.begin, last = w.s.settled.note;
   const flow = `<div class="hx-card hx-flow" style="--rw:${w.rw}px">${chassis(w.rw)}`
     + `<div class="hx-rh"><div class="hx-car"><span class="hx-ri"><img src="${icon(w.id)}" width="30" height="30" alt="" decoding="async"><span class="hx-ua" aria-hidden="true"></span></span><span class="hx-rt"><b class="hx-wf">${esc(w.name)}</b><span class="hx-title">${esc(w.title)}</span></span>${chip(st.chip, ' hx-state')}</div></div>`
     + `<div class="hx-rows">${st.rows.map(r => `<div class="hx-row"><div class="hx-car"><span class="hx-rl">${esc(r[0])}</span>${chip([r[1], r[2]])}</div></div>`).join('')}</div>`
-    + `<div class="hx-note" style="max-height:0px"><div class="hx-car"><b>${esc(last[0])}</b><span>${esc(last[1])}</span></div></div></div>`;
-  const overview = `<div class="hx-card hx-ov"><p class="hx-ov-h">Six workflows, one outcome each</p><ul class="hx-ov-list">${WF.map((x, i) => `<li class="hx-ov-row${i === 0 ? ' on' : ''}"><img src="${icon(x.id)}" width="20" height="20" alt="" decoding="async"><b>${esc(x.name)}</b><span>${esc(x.s.settled.lab)}</span></li>`).join('')}</ul><div class="hx-ov-note"><b>${esc(last[0])}</b><span>${esc(last[1])}</span></div></div>`;
+    + `<div class="hx-note" style="max-height:${single ? 'none' : '0px'}"><div class="hx-car"><b>${esc(last[0])}</b><span>${esc(last[1])}</span></div></div></div>`;
+  const overview = single ? flow.replace('hx-flow', 'hx-ov').replace(chassis(w.rw), '') : `<div class="hx-card hx-ov"><p class="hx-ov-h">Six workflows, one outcome each</p><ul class="hx-ov-list">${WF.map((x, i) => `<li class="hx-ov-row${i === 0 ? ' on' : ''}"><img src="${icon(x.id)}" width="20" height="20" alt="" decoding="async"><b>${esc(x.name)}</b><span>${esc(x.s.settled.lab)}</span></li>`).join('')}</ul><div class="hx-ov-note"><b>${esc(last[0])}</b><span>${esc(last[1])}</span></div></div>`;
   const rail = WF.map((x, i) => `<a class="hx-tab${i === 0 ? ' on' : ''}" href="${esc(linkFor(x.id))}" data-i="${i}"${i === 0 ? ' aria-current="true"' : ''}><img src="${icon(x.id)}" width="22" height="22" alt=""><span class="hx-tab-name">${esc(x.name)}</span></a>`).join('');
-  return `<section class="hx" data-hero data-assets="${esc(assetBase)}" aria-label="Six Focus Care workflows" style="--gx:${w.gx}%;--gy:${w.gy}%">`
-    + `<div class="hx-top"><p class="hx-label"><span class="hx-n">1/6</span> <b class="hx-name">${esc(w.name)}</b> <span class="hx-lab">${esc(st.lab)}</span></p><button type="button" class="hx-pause" hidden>Pause motion</button></div>`
+  return `<section class="hx${single ? ' hx-single' : ''}" data-hero${single ? ` data-workflow="${esc(workflowId)}"` : ''} data-assets="${esc(assetBase)}" aria-label="${single ? esc(w.name) + ' workflow' : 'Six Focus Care workflows'}" style="--gx:${w.gx}%;--gy:${w.gy}%">`
+    + `<div class="hx-top"><p class="hx-label"><span class="hx-n">${single ? '' : '1/6'}</span> <b class="hx-name">${esc(w.name)}</b> <span class="hx-lab">${esc(st.lab)}</span></p><button type="button" class="hx-pause" hidden>Pause motion</button></div>`
     + `<div class="hx-clip"><div class="hx-cam">${flow}${overview}</div></div>`
-    + `<nav class="hx-rail" aria-label="Choose a workflow"><span class="hx-pill" aria-hidden="true"></span>${rail}</nav>`
+    + (single ? '' : `<nav class="hx-rail" aria-label="Choose a workflow"><span class="hx-pill" aria-hidden="true"></span>${rail}</nav>`)
     + `<div class="hx-prog" aria-hidden="true"><i></i></div></section>`;
 }
