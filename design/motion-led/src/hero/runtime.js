@@ -5,9 +5,9 @@
 // explicitly by the optional native chunk (native.js); static WebPs remain the fallback.
 import { rr, rect, shadowRects, clamp, lerp } from '../../../vendor/focus-care-motion/studies/component-library/src/geometry.js';
 import { buildCamera } from '../../../vendor/focus-care-motion/studies/component-library/src/motion.js';
-import { WF, BEAT, CONTACT, SETTLE, SWAP, LOOP, ROWS } from './data.mjs';
+import { WF as HOME_WF, BEAT, CONTACT, SETTLE, SWAP } from './data.mjs';
+import { SERVICE_WF } from './service-data.mjs';
 
-const N = WF.length;
 // GSAP ease shapes in closed form (power3.inOut, power3.out, power2.in, back.out, elastic.out).
 const p3io = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
 const p3o = t => 1 - Math.pow(1 - t, 3);
@@ -18,6 +18,9 @@ const seg = (t, a, d) => clamp((t - a) / d);
 const mod = (a, b) => ((a % b) + b) % b;
 
 function setup(root) {
+  const single = !!root.dataset.workflow;
+  const WF = single ? SERVICE_WF.filter(w => w.id === root.dataset.workflow) : HOME_WF;
+  const N = WF.length, LOOP = BEAT * N;
   const q = s => root.querySelector(s), qa = s => [...root.querySelectorAll(s)];
   const flow = q('.hx-flow'), cam = q('.hx-cam'), clip = q('.hx-clip'), svg = q('.hx-chassis');
   const paths = Object.fromEntries(['sh-a', 'sh-c', 'body', 'hl', 'edge'].map(c => [c, svg.querySelector('.' + c)]));
@@ -56,7 +59,7 @@ function setup(root) {
     const base = tabs.map(b => b.offsetWidth);
     tabNames.forEach(n => { n.style.display = ''; });
     const labW = tabs.map((b, i) => named ? tabNames[i].scrollWidth : 0);
-    const gap = parseFloat(getComputedStyle(q('.hx-rail')).columnGap) || 6;
+    const gap = tabs.length ? parseFloat(getComputedStyle(q('.hx-rail')).columnGap) || 6 : 0;
     L = { mob, named, base, labW, gap, avail, push: mob ? 1.04 : 1.12, cy: mob ? -2 : -5 };
     camera = buildCameraLoop();
     S.last = {};
@@ -131,6 +134,7 @@ function setup(root) {
   }
 
   function renderRail(i, nx, p) {
+    if (!tabs.length) return;
     const open = tabs.map((_, k) => k === i ? 1 - p : k === nx ? p : 0);
     let x = 6, px = 6, pw = 0;
     tabs.forEach((b, k) => {
@@ -161,7 +165,7 @@ function setup(root) {
     setText(noteB, nt[0]); setText(noteS, nt[1]);
     // On a workflow change only: swap header content and re-measure this workflow's card at its own width.
     if (S.last.ci !== f.ci) { setText(wfName, wf.name); setText(wfTitle, wf.title); headImg.src = iconSrc(wf.id); if (S.native) S.native.show(wf.ua); measureCard(f.ci); S.last.ci = f.ci; }
-    setText(lblN, (f.ci + 1) + '/' + N); setText(lblName, wf.name); setText(lblLab, st.lab);
+    setText(lblN, single ? '' : (f.ci + 1) + '/' + N); setText(lblName, wf.name); setText(lblLab, st.lab);
     cars.forEach((c, k) => { const m = f.car(k); c.style.clipPath = m.clip > .01 ? `inset(-40% -20% ${m.clip.toFixed(2)}% -20%)` : ''; c.style.transform = m.y ? `translateY(${m.y.toFixed(2)}px)` : ''; });
     rowsEl.forEach((r, k) => {
       const h = k === f.hot ? f.hotP : 0; r.style.setProperty('--hot', h.toFixed(3));
@@ -185,6 +189,10 @@ function setup(root) {
 
   function renderOverview() {
     cam.style.transform = ''; flow.style.width = '';
+    if (single) {
+      setText(lblLab, WF[0].s.settled.lab);
+      return;
+    }
     ovRows.forEach((r, k) => r.classList.toggle('on', k === S.sel));
     const nt = WF[S.sel].s.settled.note; setText(ovNote.querySelector('b'), nt[0]); setText(ovNote.querySelector('span'), nt[1]);
     L && tabNames.forEach((s, k) => { s.style.maxWidth = L.named && k === S.sel ? L.labW[k] + 'px' : '0px'; });

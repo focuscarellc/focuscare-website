@@ -12,7 +12,7 @@ export const services=[
     ],
     "output": "A hiring workflow your team can follow.",
     "detail": "Make applications easier to collect and hiring stages easier to track.",
-    "boundary": "Your team reviews candidates and makes hiring decisions.",
+    "boundary": "You decide who to hire.",
     "closing": "Where does hiring stall today?",
     "teasers": [
       "Online application forms",
@@ -31,7 +31,7 @@ export const services=[
     ],
     "output": "A clear view of training requirements.",
     "detail": "Give staff a clear view of missing files and training that is due.",
-    "boundary": "Your team confirms completion and reviews requirements.",
+    "boundary": "You confirm completion and review requirements.",
     "closing": "Which training records need attention?",
     "teasers": [
       "Organized training files",
@@ -41,16 +41,16 @@ export const services=[
   {
     "id": "payroll",
     "name": "Payroll",
-    "headline": "Payroll records ready for staff review.",
-    "summary": "Help staff review time corrections before payroll reconciliation.",
+    "headline": "Payroll records ready for your review.",
+    "summary": "Review time corrections before payroll reconciliation.",
     "bullets": [
       "Structured response sheets",
       "Records by pay period",
       "Missing-time follow-up"
     ],
-    "output": "Period records ready for staff reconciliation.",
+    "output": "Period records ready for your reconciliation.",
     "detail": "Bring time corrections and pay-period records into a consistent review process.",
-    "boundary": "Staff reconcile records and approve payroll.",
+    "boundary": "You reconcile records and approve payroll.",
     "closing": "What slows your payroll review?",
     "teasers": [
       "Pay-period response sheets",
@@ -69,7 +69,7 @@ export const services=[
     ],
     "output": "Daily records with a consistent structure.",
     "detail": "Replace scattered paperwork with standard forms and daily logs.",
-    "boundary": "Staff review records and retain clinical responsibility.",
+    "boundary": "You oversee the records. Your care team retains clinical responsibility.",
     "closing": "Which daily records need a clearer format?",
     "teasers": [
       "Standard online forms",
@@ -80,7 +80,7 @@ export const services=[
     "id": "billing",
     "name": "Billing",
     "headline": "Find billing issues before submission.",
-    "summary": "Help staff correct billing issues before submission.",
+    "summary": "Catch billing issues before submission.",
     "bullets": [
       "Organized claim reviews",
       "Invoice review records",
@@ -88,7 +88,7 @@ export const services=[
     ],
     "output": "A review workflow for claims and invoices.",
     "detail": "Make the claim or invoice needing attention easier to find and correct.",
-    "boundary": "Staff verify corrections and authorize submission.",
+    "boundary": "You verify corrections and authorize submission.",
     "closing": "Where do billing exceptions get stuck?",
     "teasers": [
       "Claim and invoice reviews",
@@ -107,7 +107,7 @@ export const services=[
     ],
     "output": "A staff portal showing what is missing or due.",
     "detail": "Give your team one place to check licensing-required staff records.",
-    "boundary": "Tools support staff oversight; they do not guarantee compliance.",
+    "boundary": "Tools support your oversight; they do not guarantee compliance.",
     "closing": "Which staff records are missing or due?",
     "teasers": [
       "Required staff documents",

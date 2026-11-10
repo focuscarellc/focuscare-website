@@ -68,6 +68,28 @@
 
 .hx .hx-ov-row{margin:0}
 @media(prefers-reduced-motion:reduce){.hx{height:auto;min-height:0}}
+
+/* Service pages use one concise story, with no selector rail or demo controls. */
+.service-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,540px);gap:56px;align-items:center;padding:24px 0 52px}
+.service-copy h1{font-size:clamp(38px,4.8vw,62px);max-width:14ch;line-height:1.05}
+.service-copy>p:not(.boundary){font-size:19px;line-height:1.5;max-width:38ch;margin-top:22px}
+.service-copy .capabilities{font-size:16px;margin-block:22px}
+.service-copy .capabilities li{margin-top:8px}
+.service-copy .boundary{margin-top:18px}
+main>.breadcrumb{margin-top:32px;margin-bottom:0}
+.service-hero .hx-single{height:450px}
+.hx-single .hx-clip{bottom:18px}
+.hx-single .hx-ov .hx-note{max-height:none}
+.hx-single .hx-ov .hx-ri .hx-ua{display:none}
+.hx-single.hx-native .hx-ov .hx-ri img{visibility:visible}
+.hx-single.hx-reduced .hx-clip{position:relative;top:auto;bottom:auto;margin:58px 0 22px}
+.hx-single.hx-reduced .hx-cam{position:relative}
+@media(max-width:1040px){.service-hero{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px}.service-copy h1{font-size:44px}}
+@media(max-width:760px){.service-hero{grid-template-columns:1fr;gap:30px;padding:28px 0 36px}.service-copy h1{font-size:clamp(36px,7.5vw,48px);max-width:18ch}.service-copy>p:not(.boundary){font-size:17px}.service-hero .hx{justify-self:center}.service-copy .actions{margin-top:20px}}
+@media(max-width:520px){.service-hero .hx-single{height:480px}}
+@media(max-width:360px){.service-hero .hx-single{height:560px}}
+@media(prefers-reduced-motion:reduce){.service-hero .hx-single{height:auto;min-height:0}.hx-single .hx-clip{margin:58px 0 22px}}
+.service-hero .hx-single.hx-reduced{height:auto;min-height:0}
 .hx.hx-reduced{height:auto;min-height:0}
 
 /* Keep meaningful labels inside the carrier when classic scrollbars reduce
