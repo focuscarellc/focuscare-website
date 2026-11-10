@@ -35,3 +35,5 @@ The Home dashboard hook stays empty/hidden. No dashboard source, assets, state o
 ## Approved November 6 updates
 
 Home uses a six-workflow autoplay hero with a quiet Pause/Resume control, actual native Motion geometry and icons, static HTML, and a six-outcome reduced-motion overview. The owner authorized a camera push and relaxed the former hero payload limit. Service cards use selected Icon Stage C, plain bullets and hero-blue CTA links. About uses the original founder headshot in a raised Motion depth card with frame escape. Keep cards as approved, avoid broad restyling.
+
+Provider-facing voice: address the prospective client as "you". Say "you stay in control" for oversight. Use staff references only to describe records or operational work, not to frame who receives control.
