@@ -5,6 +5,11 @@ import {createHash} from 'node:crypto';
 import {assertCleanText} from '../design/motion-led/src/text.mjs';
 const root=resolve(import.meta.dirname,'..'), dist=join(root,'design/motion-led/dist'), pub=join(root,'public');
 const origin='https://focuscarellc.com', preview=process.env.SITE_PREVIEW==='1';
+const analyticsToken=process.env.POSTHOG_PROJECT_TOKEN||'',analyticsHost=process.env.POSTHOG_HOST||'';
+const analyticsEnabled=!!analyticsToken&&!!analyticsHost;
+if(!analyticsEnabled&&process.env.NODE_ENV!=='production')console.warn('POSTHOG_PROJECT_TOKEN and POSTHOG_HOST variables required by PostHog are missing or un-configured, this causes events to be silently missed. This warning stops appearing once configured.');
+const attr=s=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const analyticsTags=route=>analyticsEnabled&&route!='/404'?`<link rel="stylesheet" href="/assets/analytics.css"><script type="module" src="/assets/analytics.js" data-focuscare-analytics data-project-token="${attr(analyticsToken)}" data-api-host="${attr(analyticsHost)}" data-route="${attr(route)}"></script>`:'';
 const manifest=JSON.parse(readFileSync(join(dist,'route-manifest.json'),'utf8'));
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const out=(file,data)=>{assertCleanText(data,file);const p=join(pub,file);mkdirSync(dirname(p),{recursive:true});writeFileSync(p,data,'utf8')};
@@ -30,6 +35,8 @@ for(const p of manifest.pages){
   html=html.replace(/<link rel="canonical"[^>]*>/,'').replace(/<meta property="og:url"[^>]*>/,'').replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/,'');
   notFoundHtml=html;
  }
+ if(analyticsEnabled&&p.route==='/privacy')html=html.replace('</article>','<section id="website-analytics"><h2>Website analytics</h2><p>With your permission, we use PostHog to measure visits and interest in our services. We do not send contact-form contents or record sessions. You can change your choice using Analytics preferences in the footer.</p></section></article>');
+ html=html.replace('</head>',analyticsTags(p.route)+'</head>');
  const file='redesign/'+p.path;out(file,html);
  routes.push(p.route==='/404'?{source:'/404',destination:'/__focuscare_not_found'}:{source:p.route,destination:'/'+file});
  records.push({...p,path:file,status:p.route==='/404'?404:200,sha256:sha(html),bytes:Buffer.byteLength(html),indexed});
@@ -47,6 +54,8 @@ for(const [route,title,description,body]of[
 ]){
  let html=base.replace(/<main class="shell" id="main" tabindex="-1">[\s\S]*?<\/main>/,`<main class="shell" id="main" tabindex="-1"><section class="page-intro"><h1>${title}</h1><p>${description}</p></section><section class="prose">${body}</section><section class="cta"><div><h2>Which workflow would you fix first?</h2></div><a class="button" href="/contact">Talk to Focus Care</a></section></main>`)
  .replace(/<title>[^<]*<\/title>/,`<title>${title} | Focus Care</title>`).replace(/content="Contact Focus Care[^"\n]*"/g,`content="${description}"`).replaceAll('https://focuscarellc.com/contact',origin+route).replace('"name":"Contact Focus Care | Discuss a workflow"',`"name":${JSON.stringify(title+' | Focus Care')}`).replace(/<script src="\/assets\/contact.js" defer><\/script>/,'').replace(/ aria-current="page"/g,'');
+ // These campaign pages derive from Contact; set their own tracking path.
+ html=html.replace('data-route="/contact"',`data-route="${route}"`);
  const path='redesign'+route+'/index.html';out(path,html);routes.push({source:route,destination:'/'+path});records.push({route,path,title,description,indexed:!preview,bytes:Buffer.byteLength(html),sha256:sha(html)});
 }
 out('robots.txt',preview?'User-agent: *\nDisallow: /\n':`User-agent: *\nAllow: /\nDisallow: /redesign/\nDisallow: /api/\nSitemap: ${origin}/sitemap.xml\n`);

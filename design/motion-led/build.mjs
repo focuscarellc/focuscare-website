@@ -146,6 +146,8 @@ for(const component of ['service-cards','founder-card'])write('assets/'+componen
 write('assets/site.js',(await esbuild.transform(readFileSync(join(root,'src/scene-controls.js'),'utf8')+'\n'+siteSource.slice(0,contactSplit)+'})();',{minify:true,target:'es2019'})).code);
 write('assets/contact.js',(await esbuild.transform("(()=>{const motionQuery=matchMedia('(prefers-reduced-motion: reduce)');const {loadScenes,visibleStage,onScreen}=window.FocusCareMotionHelpers;"+siteSource.slice(contactSplit),{minify:true,target:'es2019'})).code);
 write('assets/service-icons.js',(await esbuild.transform(readFileSync(join(root,'src/service-icon-controls.js'),'utf8'),{minify:true,target:'es2019'})).code);
+await esbuild.build({entryPoints:[join(root,'src/analytics.js')],bundle:true,splitting:true,format:'esm',outdir:join(dist,'assets'),entryNames:'analytics',chunkNames:'analytics-[name]-[hash]',minify:true,target:'es2020',legalComments:'eof',logLevel:'error'});
+write('assets/analytics.css',(await esbuild.transform(readFileSync(join(root,'src/analytics.css'),'utf8'),{loader:'css',minify:true})).code);
 mkdirSync(join(dist,'assets/service-icons'),{recursive:true});
 for(const [id,name]of Object.entries(serviceIcons)){
  if(cardIcons.icons[id]?.nativeName!==name)throw Error('Card icon mapping changed: '+id);
@@ -153,6 +155,7 @@ for(const [id,name]of Object.entries(serviceIcons)){
 }
 
 mkdirSync(join(dist,'licenses'),{recursive:true});for(const f of readdirSync(join(up,'vendor/focus-care-motion/licenses')))copyFileSync(join(up,'vendor/focus-care-motion/licenses',f),join(dist,'licenses',f));
+for(const pkg of ['posthog-js','posthog-node'])copyFileSync(resolve(root,'../../node_modules',pkg,'LICENSE'),join(dist,'licenses',pkg+'.txt'));
 for(const [r,p]of routes)write(pathFor(r),shell(r,p.title,p.description,p.body,p.service));
 const pages=[...routes].map(([route,p])=>{const path=pathFor(route),data=readFileSync(join(dist,path));return{route,path,title:p.title,description:p.description,sha256:sha(data),bytes:data.length,service:!!p.service};});
 const cost=f=>{const b=readFileSync(join(dist,f));return{file:f,raw:b.length,gzip:gzipSync(b,{level:9}).length,sha256:sha(b)};};
