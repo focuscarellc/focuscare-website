@@ -1,7 +1,7 @@
 // Run after pages:build with dummy PostHog env values. All network calls are intercepted.
 const {chromium}=require('playwright');
 const fs=require('node:fs'),path=require('node:path'),zlib=require('node:zlib');
-const root=path.resolve(__dirname,'..'),pub=path.join(root,'public'),out=path.join(root,'release-evidence/posthog');
+const root=path.resolve(__dirname,'..'),pub=path.join(root,'public'),out=path.resolve(process.env.EVIDENCE_DIR||path.join(root,'release-evidence/posthog'));
 fs.mkdirSync(out,{recursive:true});
 const release=JSON.parse(fs.readFileSync(path.join(root,'design/generated/release-manifest.json')));
 const types={'.html':'text/html; charset=utf-8','.js':'application/javascript','.css':'text/css','.woff2':'font/woff2','.webp':'image/webp','.png':'image/png'};
@@ -17,6 +17,7 @@ async function context(browser,{privacy,denySDK,host='focuscarellc.com'}={}){
    await route.fulfill({status:req.method()==='OPTIONS'?204:200,contentType:'application/json',headers:{'Access-Control-Allow-Origin':'*','Access-Control-Allow-Headers':'*'},body:req.method()==='OPTIONS'?'':JSON.stringify({status:1})});return;
   }
   if(u.hostname!==host){await route.abort();return}
+  if(u.pathname==='/api/contact'){await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify(req.method()==='POST'?{success:true,receipt:'11111111-1111-4111-8111-111111111111'}:{token:'local-fixture-token'})});return}
   if(denySDK&&u.pathname.startsWith('/assets/analytics-analytics-sdk-')){await route.fulfill({status:503,body:'Unavailable'});return}
   const record=release.pages.find(p=>p.route===u.pathname);const file=path.resolve(pub,record?.path||u.pathname.slice(1));
   if(!file.startsWith(pub+path.sep)||!fs.existsSync(file)||!fs.statSync(file).isFile()){await route.fulfill({status:404,body:'Not found'});return}
@@ -36,8 +37,8 @@ async function until(predicate,ms=8000){const start=Date.now();while(!predicate(
  check('pageview after consent',await until(()=>batches.some(e=>e.event==='$pageview')));
  await p.locator('#contact-name').fill('PRIVATE_NAME');await p.locator('#contact-email').fill('private-value@example.invalid');await p.locator('#contact-message').fill('PRIVATE_CARE_MESSAGE');
  await p.locator('#contact-form button[type=submit]').click();
- check('draft action captured',await until(()=>batches.some(e=>e.event==='contact draft prepared')));
- const draft=batches.find(e=>e.event==='contact draft prepared');check('only service context in draft event',draft?.properties?.service==='billing');
+ check('accepted enquiry captured',await until(()=>batches.some(e=>e.event==='contact enquiry submitted')));
+ const enquiry=batches.find(e=>e.event==='contact enquiry submitted');check('only service context in enquiry event',enquiry?.properties?.service==='billing');
  const encoded=JSON.stringify(batches);check('no form/query/fragment values in capture',!['PRIVATE_NAME','private-value@example.invalid','PRIVATE_CARE_MESSAGE','PRIVATE_QUERY','PRIVATE_FRAGMENT'].some(v=>encoded.includes(v)));
  check('URL stripped to public path',batches.filter(e=>e.event==='$pageview').every(e=>e.properties.$current_url==='https://focuscarellc.com/contact'));
  check('person profiles disabled',batches.every(e=>e.properties.$process_person_profile===false));

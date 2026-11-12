@@ -8,3 +8,5 @@
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;animation:none!important;scroll-behavior:auto!important}.button:active{transform:none}}
 @media print{.header,.footer,.cta,.motion-controls,.print-button{display:none}.shell{padding:0;max-width:none}.prose{max-width:none;font-size:11pt}.page-intro{padding-top:0}}.related-heading{font-size:18px;margin-top:24px;letter-spacing:-.02em}
 @media(max-width:360px){.hero h1{font-size:34px}}
+
+.contact-form fieldset{border:0;padding:0;margin:0;min-width:0}.contact-trap{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}.contact-form fieldset:disabled{opacity:.7}.contact-form [type=submit]:disabled{cursor:wait}.contact-form .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}

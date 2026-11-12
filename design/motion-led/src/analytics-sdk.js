@@ -11,7 +11,7 @@ const allowed = new Set([
 ]);
 const currentURL = () => location.origin + location.pathname;
 const referrer = () => { try { return new URL(document.referrer).origin; } catch { return ''; } };
-const events = new Set(['$pageview', '$pageleave', 'contact CTA clicked', 'service link clicked', 'email app opened', 'email link clicked', 'phone link clicked', 'software link clicked', 'checklist link clicked', 'workflow selected', 'contact draft prepared']);
+const events = new Set(['$pageview', '$pageleave', 'contact CTA clicked', 'service link clicked', 'email app opened', 'email link clicked', 'phone link clicked', 'software link clicked', 'checklist link clicked', 'workflow selected', 'contact draft prepared', 'contact enquiry submitted']);
 const services = new Set(['recruitment', 'training', 'payroll', 'operations', 'billing', 'compliance', 'unspecified']);
 const placements = new Set(['faq', 'navigation', 'footer', 'hero', 'page']);
 

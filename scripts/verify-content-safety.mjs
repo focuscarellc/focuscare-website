@@ -17,12 +17,14 @@ try{
   if(route.startsWith('elevating-'))check('qualified provenance without circular citation',!data.selfLinks&&data.source.includes('originally published 31 January 2026')&&data.source.includes('does not specify the measurement period or calculation method'),data.source);
  }
  const network=[];page.on('request',r=>{if(r.isNavigationRequest()||r.method()==='POST')network.push({url:r.url(),method:r.method()})});
- await page.goto(url+'/contact?service=billing');await page.fill('#contact-name','Local draft check');await page.fill('#contact-email','preview@example.invalid');await page.getByRole('button',{name:'Prepare email draft',exact:true}).click();
- check('ready contact prepares locally without navigation',await page.locator('#email-ready').isVisible()&&network.every(n=>n.method==='GET'&&!n.url.includes('preview%40')&&!n.url.includes('Local%20draft')),network);
+ await page.route('**/api/contact',r=>r.fulfill({status:200,contentType:'application/json',body:JSON.stringify(r.request().method()==='POST'?{success:true,receipt:'11111111-1111-4111-8111-111111111111'}:{token:'local-fixture-token'})}));
+ await page.goto(url+'/contact?service=billing');await page.fill('#contact-name','TEST - ignore');await page.fill('#contact-email','preview@example.invalid');await page.getByRole('button',{name:'Send enquiry',exact:true}).click();
+ await page.locator('#contact-success').waitFor({state:'visible'});
+ check('contact submits only to same-origin API without field values in URLs',await page.locator('#contact-success').isVisible()&&network.filter(n=>n.method==='POST').length===1&&network.every(n=>!n.url.includes('preview%40')&&!n.url.includes('TEST%20')),network);
  check('safe static form method',await page.locator('#contact-form').getAttribute('method')==='post');
  await page.route('**/assets/contact.js',r=>r.abort());await page.goto(url+'/contact');
- check('blocked draft script keeps form unavailable',await page.locator('#contact-form').isHidden()&&await page.locator('#contact-fallback').isVisible());
- check('failure preserves direct contact routes',await page.locator('a[href="mailto:info@focuscarellc.com"]').first().isVisible()&&await page.locator('a[href^="tel:"]').first().isVisible());
+ check('blocked submit script keeps form unavailable',await page.locator('#contact-form').isHidden()&&await page.locator('#contact-fallback').isVisible());
+ check('failure preserves direct contact routes',await page.locator('a[href="mailto:jovanie@focuscarellc.com"]').first().isVisible()&&await page.locator('a[href^="tel:"]').first().isVisible());
  await page.screenshot({path:join(root,'release-evidence/contact-script-failure-390.png'),fullPage:true});
  await page.unroute('**/assets/contact.js');await page.goto(url);await page.waitForFunction(()=>window.FocusCareHero?.animationReady);await page.evaluate(()=>FocusCareHero.pause());
  check('fully revealed reading interval',SWAP-(SETTLE+.55)>=2.7,{seconds:SWAP-(SETTLE+.55),loop:BEAT*6});

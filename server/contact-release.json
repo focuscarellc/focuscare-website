@@ -1,0 +1,14 @@
+{
+  "account_id": "01f1c34abd42e0170f0495ec0ed8d3f6",
+  "pages_project": "focuscare-website",
+  "retry_worker": "focuscare-contact-retry",
+  "compatibility_date": "2026-11-12",
+  "database": {
+    "binding": "CONTACT_DB",
+    "name": "focuscare-website-leads",
+    "id": "435e1b90-1d79-413e-bbc9-82ea9d4ae23a"
+  },
+  "required_server_secrets": ["CONTACT_FORM_SECRET", "RESEND_API_KEY"],
+  "retry_cron_utc": "*/5 * * * *",
+  "owner_recipient": "jovanie@focuscarellc.com"
+}

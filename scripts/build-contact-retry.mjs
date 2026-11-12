@@ -1,0 +1,11 @@
+import { build } from 'esbuild';
+import { resolve, dirname } from 'node:path';
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
+const root = resolve(import.meta.dirname, '..');
+const output = resolve(process.env.CONTACT_RETRY_OUTPUT || resolve(root, '.vercel/contact-retry/worker.mjs'));
+mkdirSync(dirname(output), { recursive: true });
+await build({ entryPoints: [resolve(root, 'server/contact-retry.ts')], outfile: output, bundle: true, format: 'esm', platform: 'neutral', target: 'es2022', legalComments: 'none' });
+const sha256 = createHash('sha256').update(readFileSync(output)).digest('hex');
+writeFileSync(output + '.json', JSON.stringify({ atUTC: new Date().toISOString(), sha256, output, source: 'server/contact-retry.ts' }, null, 2));
+console.log(JSON.stringify({ output, sha256 }));

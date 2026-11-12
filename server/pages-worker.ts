@@ -4,8 +4,9 @@ import { handleComplianceKit, type ComplianceKitEnv } from "./compliance-kit"
 import release from "../design/generated/release-manifest.json"
 import notFoundHtml from "../design/generated/not-found.json"
 import { captureChecklistOutcome, type AnalyticsEnv } from "./analytics"
+import { handleContact, type ContactEnv } from "./contact"
 
-type Env = ComplianceKitEnv & AnalyticsEnv & { ASSETS: { fetch(req: Request | string): Promise<Response> } }
+type Env = ComplianceKitEnv & AnalyticsEnv & ContactEnv & { ASSETS: { fetch(req: Request | string): Promise<Response> } }
 const security = { "X-Content-Type-Options": "nosniff", "Referrer-Policy": "strict-origin-when-cross-origin", "X-Frame-Options": "SAMEORIGIN" }
 const redirects: Record<string, string> = Object.fromEntries((release.redirects as { from: string; to: string }[]).map(r => [r.from, r.to]))
 const pages = new Map<string, string>()
@@ -32,6 +33,7 @@ export default {
   async fetch(req: Request, env: Env, ctx?: { waitUntil(promise: Promise<unknown>): void }): Promise<Response> {
     const url = new URL(req.url), path = url.pathname, head = req.method === "HEAD"
     if (path.startsWith("/api/")) {
+      if (path === '/api/contact') return finish(await handleContact(req, env, ctx), head)
       if (path !== "/api/compliance-kit") return finish(Response.json({ error: "Not found." }, { status: 404, headers: { "Cache-Control": "no-store" } }), head)
       if (req.method !== "POST") return finish(Response.json({ error: "Method not allowed." }, { status: 405, headers: { Allow: "POST", "Cache-Control": "no-store" } }), head)
       const response = await handleComplianceKit(req, env)
