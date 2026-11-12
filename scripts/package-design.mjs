@@ -9,7 +9,7 @@ const analyticsToken=process.env.POSTHOG_PROJECT_TOKEN||'',analyticsHost=process
 const analyticsEnabled=!!analyticsToken&&!!analyticsHost;
 if(!analyticsEnabled&&process.env.NODE_ENV!=='production')console.warn('POSTHOG_PROJECT_TOKEN and POSTHOG_HOST variables required by PostHog are missing or un-configured, this causes events to be silently missed. This warning stops appearing once configured.');
 const attr=s=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const analyticsTags=route=>analyticsEnabled&&route!='/404'?`<link rel="stylesheet" href="/assets/analytics.css"><script type="module" src="/assets/analytics.js" data-focuscare-analytics data-project-token="${attr(analyticsToken)}" data-api-host="${attr(analyticsHost)}" data-route="${attr(route)}"></script>`:'';
+const analyticsTags=route=>analyticsEnabled&&route!='/404'?`<link rel="stylesheet" href="/assets/analytics.css"><script type="module" src="/assets/analytics.js?v=${sha(readFileSync(join(dist,'assets/analytics.js'))).slice(0,12)}" data-focuscare-analytics data-project-token="${attr(analyticsToken)}" data-api-host="${attr(analyticsHost)}" data-route="${attr(route)}"></script>`:'';
 const manifest=JSON.parse(readFileSync(join(dist,'route-manifest.json'),'utf8'));
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const out=(file,data)=>{assertCleanText(data,file);const p=join(pub,file);mkdirSync(dirname(p),{recursive:true});writeFileSync(p,data,'utf8')};

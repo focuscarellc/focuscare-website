@@ -18,6 +18,7 @@ async function context(browser,{privacy,denySDK,host='focuscarellc.com'}={}){
   }
   if(u.hostname!==host){await route.abort();return}
   if(u.pathname==='/api/contact'){await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify(req.method()==='POST'?{success:true,receipt:'11111111-1111-4111-8111-111111111111'}:{token:'local-fixture-token'})});return}
+  if(['/assets/contact.js','/assets/analytics.js'].includes(u.pathname)&&!u.search){await route.fulfill({status:200,contentType:'application/javascript',body:'throw Error("Stale unversioned asset")'});return}
   if(denySDK&&u.pathname.startsWith('/assets/analytics-analytics-sdk-')){await route.fulfill({status:503,body:'Unavailable'});return}
   const record=release.pages.find(p=>p.route===u.pathname);const file=path.resolve(pub,record?.path||u.pathname.slice(1));
   if(!file.startsWith(pub+path.sep)||!fs.existsSync(file)||!fs.statSync(file).isFile()){await route.fulfill({status:404,body:'Not found'});return}
@@ -29,6 +30,7 @@ async function until(predicate,ms=8000){const start=Date.now();while(!predicate(
 (async()=>{const b=await chromium.launch({channel:'chrome'});try{
  const {ctx,p}=await context(b);
  await p.goto('https://focuscarellc.com/contact?service=billing&email=PRIVATE_QUERY&analytics_test=1#PRIVATE_FRAGMENT');
+ check('contact initializes despite stale unversioned assets',await p.locator('#contact-form').isVisible());
  await p.waitForTimeout(700);check('no collection before consent',sends===0);check('SDK deferred before consent',!(await p.evaluate(()=>performance.getEntriesByType('resource').some(r=>r.name.includes('analytics-analytics-sdk-')))));
  check('consent notice visible',await p.locator('.analytics-notice').isVisible());
  await p.setViewportSize({width:320,height:844});check('notice reflows at 320',await p.evaluate(()=>{const r=document.querySelector('.analytics-notice').getBoundingClientRect();return r.x>=0&&r.right<=innerWidth}));

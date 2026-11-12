@@ -1,6 +1,6 @@
 # Services enquiry capture
 
-`/contact` submits to `/api/contact` in the existing Pages worker. It no longer prepares an email draft. Email and phone alternatives remain available. The client retains fields on failure and only shows a receipt after the server confirms a durable write. JavaScript failure leaves direct contact options visible.
+`/contact` submits to `/api/contact` in the existing Pages worker. It no longer prepares an email draft. Email and phone alternatives remain available. The client retains fields on failure and only shows a receipt after the server confirms a durable write. JavaScript failure leaves direct contact options visible. Contact JS, shared CSS and the analytics entry module use content fingerprints in their URLs so returning visitors cannot combine new HTML with cached pre-release handlers.
 
 The server validates bounded JSON, same-origin requests, a honeypot and a signed challenge at least three seconds old. A challenge's UUID is the submission ID. Matching retries return the original receipt; concurrent retries cannot create duplicate records. Changing a saved payload requires a fresh challenge. Requests are limited to five accepted enquiries per derived network key per hour and 80 accepted enquiries per UTC day. These operational limits return an explicit error with the visitor's entries retained. No third-party captcha or paid plan was added.
 

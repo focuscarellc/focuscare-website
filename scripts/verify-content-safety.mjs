@@ -22,11 +22,11 @@ try{
  await page.locator('#contact-success').waitFor({state:'visible'});
  check('contact submits only to same-origin API without field values in URLs',await page.locator('#contact-success').isVisible()&&network.filter(n=>n.method==='POST').length===1&&network.every(n=>!n.url.includes('preview%40')&&!n.url.includes('TEST%20')),network);
  check('safe static form method',await page.locator('#contact-form').getAttribute('method')==='post');
- await page.route('**/assets/contact.js',r=>r.abort());await page.goto(url+'/contact');
+ await page.route('**/assets/contact.js*',r=>r.abort());await page.goto(url+'/contact');
  check('blocked submit script keeps form unavailable',await page.locator('#contact-form').isHidden()&&await page.locator('#contact-fallback').isVisible());
  check('failure preserves direct contact routes',await page.locator('a[href="mailto:jovanie@focuscarellc.com"]').first().isVisible()&&await page.locator('a[href^="tel:"]').first().isVisible());
  await page.screenshot({path:join(root,'release-evidence/contact-script-failure-390.png'),fullPage:true});
- await page.unroute('**/assets/contact.js');await page.goto(url);await page.waitForFunction(()=>window.FocusCareHero?.animationReady);await page.evaluate(()=>FocusCareHero.pause());
+ await page.unroute('**/assets/contact.js*');await page.goto(url);await page.waitForFunction(()=>window.FocusCareHero?.animationReady);await page.evaluate(()=>FocusCareHero.pause());
  check('fully revealed reading interval',SWAP-(SETTLE+.55)>=2.7,{seconds:SWAP-(SETTLE+.55),loop:BEAT*6});
  for(let i=0;i<WF.length;i++)for(const u of [3.05,4.2,SWAP-.05]){
   const state=await page.evaluate(t=>{FocusCareHero.renderAt(t);const e=document.querySelector('.hx-note'),r=e.getBoundingClientRect(),clip=document.querySelector('.hx-clip').getBoundingClientRect();return{height:parseFloat(e.style.maxHeight),contentHeight:e.scrollHeight,bottom:r.bottom,clipBottom:clip.bottom,masks:[...document.querySelectorAll('.hx-flow .hx-car')].map(e=>e.style.clipPath)}},i*BEAT+u);
