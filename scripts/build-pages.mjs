@@ -25,7 +25,7 @@ for(const p of release.pages){
 }
 tree(join(dist,'assets'),'assets');tree(join(dist,'licenses'),'licenses');
 for(const f of['assets/social-card.png'])if(!existsSync(join(out,f))&&existsSync(join(pub,f)))copy(join(pub,f),f);
-for(const f of['robots.txt','sitemap.xml','_headers','favicon.ico','favicon.svg','favicon-16x16.png','favicon-32x32.png','favicon-96x96.png','apple-touch-icon.png','android-chrome-192x192.png','android-chrome-512x512.png'])if(existsSync(join(pub,f)))copy(join(pub,f),f);
+for(const f of['a2747ba902684254afc29cd257077580.txt','robots.txt','sitemap.xml','_headers','favicon.ico','favicon.svg','favicon-16x16.png','favicon-32x32.png','favicon-96x96.png','apple-touch-icon.png','android-chrome-192x192.png','android-chrome-512x512.png'])if(existsSync(join(pub,f)))copy(join(pub,f),f);
 await build({entryPoints:[join(root,'server/pages-worker.ts')],outfile:join(out,'_worker.js'),bundle:true,format:'esm',platform:'neutral',conditions:['workerd'],target:'es2022',minify:false,legalComments:'none',logLevel:'warning'});
 files.push({path:'_worker.js',source:'server/pages-worker.ts',sha256:sha(readFileSync(join(out,'_worker.js')))});
 writeFileSync(join(out,'_routes.json'),JSON.stringify({version:1,include:['/*'],exclude:[]},null,2));

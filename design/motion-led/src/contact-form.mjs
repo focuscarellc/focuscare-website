@@ -1,10 +1,10 @@
 export function renderContact(intro, services) {
-  return `${intro('Tell us what slows your team.','Choose a workflow, or ask where to start.')}
+  return `${intro('Tell us what slows your team.','Choose a workflow, or ask where to start.','<div class="actions"><a class="button" href="#enquiry">Go to enquiry form</a></div>')}
 <section class="contact-layout"><div class="contact-options">
 <a href="mailto:jovanie@focuscarellc.com">jovanie@focuscarellc.com</a>
 <a href="tel:+12024550325">+1 (202) 455-0325</a>
 <p>Focus Care LLC<br>239 4th Ave, Suite 1401, Unit #7549<br>Pittsburgh, PA 15222</p>
-</div><div class="contact-form"><h2>Send an enquiry.</h2>
+</div><div class="contact-form" id="enquiry"><h2>Send an enquiry.</h2>
 <p>Tell us what you need. We will follow up by email.</p>
 <p id="contact-fallback" class="small">You can also email or call us using the contact details above.</p>
 <form class="js-only" id="contact-form" method="post" action="/api/contact" novalidate hidden>

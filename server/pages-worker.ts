@@ -11,7 +11,7 @@ const security = { "X-Content-Type-Options": "nosniff", "Referrer-Policy": "stri
 const redirects: Record<string, string> = Object.fromEntries((release.redirects as { from: string; to: string }[]).map(r => [r.from, r.to]))
 const pages = new Map<string, string>()
 for (const p of release.pages as { route: string; path: string }[]) if (p.route !== "/404") pages.set(p.route, p.path)
-const staticFiles = new Set(["/robots.txt", "/sitemap.xml", "/favicon.ico", "/favicon.svg", "/favicon-16x16.png", "/favicon-32x32.png", "/favicon-96x96.png", "/apple-touch-icon.png", "/android-chrome-192x192.png", "/android-chrome-512x512.png"])
+const staticFiles = new Set(["/a2747ba902684254afc29cd257077580.txt", "/robots.txt", "/sitemap.xml", "/favicon.ico", "/favicon.svg", "/favicon-16x16.png", "/favicon-32x32.png", "/favicon-96x96.png", "/apple-touch-icon.png", "/android-chrome-192x192.png", "/android-chrome-512x512.png"])
 
 function finish(res: Response, head: boolean, extra: Record<string, string> = {}) {
   const headers = new Headers(res.headers)

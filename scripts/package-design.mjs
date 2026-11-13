@@ -54,8 +54,8 @@ for(const [route,title,description,body]of[
 ]){
  let html=base.replace(/<main class="shell" id="main" tabindex="-1">[\s\S]*?<\/main>/,`<main class="shell" id="main" tabindex="-1"><section class="page-intro"><h1>${title}</h1><p>${description}</p></section><section class="prose">${body}</section><section class="cta"><div><h2>Which workflow would you fix first?</h2></div><a class="button" href="/contact">Talk to Focus Care</a></section></main>`)
  .replace(/<title>[^<]*<\/title>/,`<title>${title} | Focus Care</title>`).replace(/content="Contact Focus Care[^"\n]*"/g,`content="${description}"`).replaceAll('https://focuscarellc.com/contact',origin+route).replace('"name":"Contact Focus Care | Discuss a workflow"',`"name":${JSON.stringify(title+' | Focus Care')}`).replace(/<script src="\/assets\/contact.js" defer><\/script>/,'').replace(/ aria-current="page"/g,'');
- // These campaign pages derive from Contact; set their own tracking path.
- html=html.replace('data-route="/contact"',`data-route="${route}"`);
+ // These campaign pages derive from Contact; keep their page type and tracking path distinct.
+ html=html.replace('"@type":"ContactPage"','"@type":"WebPage"').replace('data-route="/contact"',`data-route="${route}"`);
  const path='redesign'+route+'/index.html';out(path,html);routes.push({source:route,destination:'/'+path});records.push({route,path,title,description,indexed:!preview,bytes:Buffer.byteLength(html),sha256:sha(html)});
 }
 out('robots.txt',preview?'User-agent: *\nDisallow: /\n':`User-agent: *\nAllow: /\nDisallow: /redesign/\nDisallow: /api/\nSitemap: ${origin}/sitemap.xml\n`);
