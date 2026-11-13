@@ -9,21 +9,21 @@ type Enquiry = {
   is_test: number; is_internal: number
 }
 const services = new Set(['', 'recruitment', 'training', 'payroll', 'operations', 'billing', 'compliance'])
-const internalEmails = new Set(['jovanie3@gmail.com', 'focuscarellc.com@gmail.com'])
-const encoder = new TextEncoder()
-const response = (body: unknown, status = 200) => Response.json(body, { status, headers: { 'Cache-Control': 'no-store' } })
-const iso = (ms = Date.now()) => new Date(ms).toISOString()
-const hex = (bytes: ArrayBuffer) => [...new Uint8Array(bytes)].map(x => x.toString(16).padStart(2, '0')).join('')
-const hash = async (text: string) => hex(await crypto.subtle.digest('SHA-256', encoder.encode(text)))
-async function signingKey(secret: string) {
+export const internalEmails = new Set(['jovanie3@gmail.com', 'focuscarellc.com@gmail.com'])
+export const encoder = new TextEncoder()
+export const response = (body: unknown, status = 200) => Response.json(body, { status, headers: { 'Cache-Control': 'no-store' } })
+export const iso = (ms = Date.now()) => new Date(ms).toISOString()
+export const hex = (bytes: ArrayBuffer) => [...new Uint8Array(bytes)].map(x => x.toString(16).padStart(2, '0')).join('')
+export const hash = async (text: string) => hex(await crypto.subtle.digest('SHA-256', encoder.encode(text)))
+export async function signingKey(secret: string) {
   return crypto.subtle.importKey('raw', encoder.encode(secret), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign', 'verify'])
 }
-async function tokenFor(origin: string, secret: string) {
+export async function tokenFor(origin: string, secret: string) {
   const value = `${Date.now()}.${crypto.randomUUID()}`
   const sig = await crypto.subtle.sign('HMAC', await signingKey(secret), encoder.encode(`${origin}|${value}`))
   return `${value}.${hex(sig)}`
 }
-async function validateToken(token: string, origin: string, secret: string) {
+export async function validateToken(token: string, origin: string, secret: string) {
   const match = /^(\d{13})\.([a-f0-9-]{36})\.([a-f0-9]{64})$/.exec(token)
   if (!match) return null
   const signature = Uint8Array.from(match[3].match(/../g)!, byte => parseInt(byte, 16))

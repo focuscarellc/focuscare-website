@@ -33,6 +33,7 @@ const assetTypes = {
   '.jpg': /^image\/jpeg(?:;|$)/,
   '.jpeg': /^image\/jpeg(?:;|$)/,
   '.svg': /^image\/svg\+xml(?:;|$)/,
+  '.pdf': /^application\/pdf(?:;|$)/,
 };
 function files(dir) {
   return readdirSync(dir, {withFileTypes: true}).flatMap(item => {

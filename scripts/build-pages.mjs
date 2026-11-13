@@ -29,6 +29,6 @@ for(const f of['a2747ba902684254afc29cd257077580.txt','robots.txt','sitemap.xml'
 await build({entryPoints:[join(root,'server/pages-worker.ts')],outfile:join(out,'_worker.js'),bundle:true,format:'esm',platform:'neutral',conditions:['workerd'],target:'es2022',minify:false,legalComments:'none',logLevel:'warning'});
 files.push({path:'_worker.js',source:'server/pages-worker.ts',sha256:sha(readFileSync(join(out,'_worker.js')))});
 writeFileSync(join(out,'_routes.json'),JSON.stringify({version:1,include:['/*'],exclude:[]},null,2));
-const sources=['server/pages-worker.ts','server/compliance-kit.ts','server/contact.ts','design/generated/release-manifest.json','design/generated/not-found.json','scripts/build-pages.mjs'].map(f=>({path:f,sha256:sha(readFileSync(join(root,f)))}));
+const sources=['server/pages-worker.ts','server/compliance-kit.ts','server/contact.ts','server/resource.ts','server/inspection-checklist.generated.json','design/generated/release-manifest.json','design/generated/not-found.json','scripts/build-pages.mjs'].map(f=>({path:f,sha256:sha(readFileSync(join(root,f)))}));
 writeFileSync(join(out,'.build-manifest.json'),JSON.stringify({createdUTC:new Date().toISOString(),preview:release.preview,sources,files},null,2));
 console.log(JSON.stringify({output:relative(root,out),files:files.length,worker:statSync(join(out,'_worker.js')).size}));
